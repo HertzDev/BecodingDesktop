@@ -56,7 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Admin\Catalogs\Brand.cs" />
     <Compile Include="Controllers\Admin\Catalogs\CatalogBase.cs" />
+    <Compile Include="Controllers\Admin\Catalogs\Model.cs" />
+    <Compile Include="Controllers\Admin\Catalogs\PaymentMethod.cs" />
     <Compile Include="Controllers\Admin\Catalogs\Role.cs" />
     <Compile Include="Controllers\Admin\InvoiceBlock\AddReplaceInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\InvoiceBlock\DetailInvoiceBlock.cs" />
@@ -74,6 +77,9 @@
     <Compile Include="Helpers\FormManager.cs" />
     <Compile Include="Helpers\ImageManager.cs" />
     <Compile Include="Helpers\ValidatorManager.cs" />
+    <Compile Include="Interfaces\Admin\Catalogs\IBrand.cs" />
+    <Compile Include="Interfaces\Admin\Catalogs\IModel.cs" />
+    <Compile Include="Interfaces\Admin\Catalogs\IPaymentMethod.cs" />
     <Compile Include="Interfaces\Admin\Catalogs\IRole.cs" />
     <Compile Include="Interfaces\Admin\IInvoiceBlock.cs" />
     <Compile Include="Interfaces\Admin\IMenuAdmin.cs" />
@@ -83,10 +89,13 @@
     <Compile Include="Interfaces\General\IProduct.cs" />
     <Compile Include="Interfaces\General\ISale.cs" />
     <Compile Include="Interfaces\IMenuOption.cs" />
+    <Compile Include="Models\Catalogs\BrandModel.cs" />
+    <Compile Include="Models\Catalogs\Model.cs" />
+    <Compile Include="Models\Catalogs\PaymentMethodModel.cs" />
     <Compile Include="Models\GenericCatalogModel.cs" />
     <Compile Include="Models\MenuOptionModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
-    <Compile Include="Models\Roles\RoleModel.cs" />
+    <Compile Include="Models\Catalogs\RoleModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

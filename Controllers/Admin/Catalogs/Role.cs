@@ -1,13 +1,9 @@
-﻿using BecodingDesktop.Helpers;
-using BecodingDesktop.Interfaces.Admin.Catalogs;
+﻿using BecodingDesktop.Interfaces.Admin.Catalogs;
 using BecodingDesktop.Models;
-using BecodingDesktop.Models.Roles;
+using BecodingDesktop.Models.Catalogs;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BecodingDesktop.Controllers.Admin.Catalogs
 {
@@ -35,16 +31,22 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
             return _catalog.GetResults<RoleModel>(GetMapper(), null, "pa_roles");
         }
 
-        public MessageModel SetItem()
+        public MessageModel SetItem(RoleModel role)
         {
-            string[,] parameters = { { "@nombre_rol", "2", "Empleado" }};
-            var a=_catalog.SetItem(parameters,"pa_crear_rol");
-            return a;
+            string[,] parameters = { { "@nombre_rol", "2", role.Name}};
+            return _catalog.SetItem(parameters, "pa_crear_rol");
         }
 
-        public MessageModel UpdateItem()
+        public MessageModel UpdateItem(RoleModel role)
         {
-            throw new NotImplementedException();
+            string[,] parameters = {{ "@Id", "1", role.Id.ToString() },{ "@nombre_rol", "2", role.Name }};
+            return _catalog.SetItem(parameters, "pa_actualizar_rol");
+        }
+
+        public MessageModel UpdateStateItem(RoleModel role)
+        {
+            string[,] parameters = { { "@Id", "1", role.Id.ToString() }, { "@eliminado", "1", role.State.ToString()} };
+            return _catalog.SetItem(parameters, "pa_eliminar_rol");
         }
     }
 }

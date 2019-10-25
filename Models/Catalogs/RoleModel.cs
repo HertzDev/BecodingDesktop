@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BecodingDesktop.Models.Roles
+namespace BecodingDesktop.Models.Catalogs
 {
     public class RoleModel : GenericCatalogModel
     {
