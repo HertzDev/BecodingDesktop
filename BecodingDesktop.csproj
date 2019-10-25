@@ -58,12 +58,15 @@
   <ItemGroup>
     <Compile Include="Controllers\Admin\Catalogs\Brand.cs" />
     <Compile Include="Controllers\Admin\Catalogs\CatalogBase.cs" />
+    <Compile Include="Controllers\Admin\Catalogs\Category.cs" />
     <Compile Include="Controllers\Admin\Catalogs\Model.cs" />
     <Compile Include="Controllers\Admin\Catalogs\PaymentMethod.cs" />
     <Compile Include="Controllers\Admin\Catalogs\Role.cs" />
+    <Compile Include="Controllers\Admin\Catalogs\TypeInvoice.cs" />
     <Compile Include="Controllers\Admin\InvoiceBlock\AddReplaceInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\InvoiceBlock\DetailInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\MenuAdmin.cs" />
+    <Compile Include="Controllers\Admin\Product\Product.cs" />
     <Compile Include="Controllers\Admin\Users\AddReplaceUser.cs" />
     <Compile Include="Controllers\Admin\Users\DetailUser.cs" />
     <Compile Include="Controllers\Employee\MenuEmployee.cs" />
@@ -78,9 +81,11 @@
     <Compile Include="Helpers\ImageManager.cs" />
     <Compile Include="Helpers\ValidatorManager.cs" />
     <Compile Include="Interfaces\Admin\Catalogs\IBrand.cs" />
+    <Compile Include="Interfaces\Admin\Catalogs\ICategory.cs" />
     <Compile Include="Interfaces\Admin\Catalogs\IModel.cs" />
     <Compile Include="Interfaces\Admin\Catalogs\IPaymentMethod.cs" />
     <Compile Include="Interfaces\Admin\Catalogs\IRole.cs" />
+    <Compile Include="Interfaces\Admin\Catalogs\ITypeInvoice.cs" />
     <Compile Include="Interfaces\Admin\IInvoiceBlock.cs" />
     <Compile Include="Interfaces\Admin\IMenuAdmin.cs" />
     <Compile Include="Interfaces\Admin\IUser.cs" />
@@ -90,8 +95,11 @@
     <Compile Include="Interfaces\General\ISale.cs" />
     <Compile Include="Interfaces\IMenuOption.cs" />
     <Compile Include="Models\Catalogs\BrandModel.cs" />
+    <Compile Include="Models\Catalogs\CategoryModel.cs" />
     <Compile Include="Models\Catalogs\Model.cs" />
     <Compile Include="Models\Catalogs\PaymentMethodModel.cs" />
+    <Compile Include="Models\Catalogs\TypeInvoiceModel.cs" />
+    <Compile Include="Models\General\ProductModel.cs" />
     <Compile Include="Models\GenericCatalogModel.cs" />
     <Compile Include="Models\MenuOptionModel.cs" />
     <Compile Include="Models\MessageModel.cs" />

@@ -1,5 +1,9 @@
 ﻿using BecodingDesktop.Interfaces.General;
+using BecodingDesktop.Models;
+using BecodingDesktop.Models.General;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -207,6 +211,31 @@ namespace BecodingDesktop.Controllers.General.Products
             tblBody.Controls.Add(lblDescription, 1, 8);
 
             return controls;
+        }
+
+        public Func<DataRow, ProductModel> GetMapper()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ProductModel> GetProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageModel SetItem(ProductModel data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageModel UpdateItem(ProductModel data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageModel UpdateStateItem(ProductModel data)
+        {
+            throw new NotImplementedException();
         }
     }
 }

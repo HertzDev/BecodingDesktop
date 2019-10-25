@@ -1,4 +1,5 @@
-﻿using BecodingDesktop.Helpers;
+﻿using BecodingDesktop.Controllers.Admin;
+using BecodingDesktop.Helpers;
 using BecodingDesktop.Views.Admin;
 using BecodingDesktop.Views.Base;
 using MaterialSkin;
@@ -42,7 +43,7 @@ namespace BecodingDesktop.Views.General
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmMenuAdminContainer a = new FrmMenuAdminContainer();
+            FrmMenuAdminContainer a = new FrmMenuAdminContainer(new MenuAdmin());
             a.Show();
         }
     }
