@@ -1,5 +1,6 @@
 ﻿using BecodingDesktop.Controllers.Admin.Catalogs;
 using BecodingDesktop.Controllers.Admin.Users;
+using BecodingDesktop.Models.Catalogs;
 using BecodingDesktop.Views.Admin.Users;
 using System;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace BecodingDesktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var prueba = new Role();
-            prueba.UpdateStateItem(new Models.Roles.RoleModel()
+            prueba.UpdateStateItem(new RoleModel()
             {
                 Name="Administrador",
                 Id=1,
