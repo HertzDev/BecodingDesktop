@@ -2,6 +2,7 @@
 using BecodingDesktop.Controllers.Admin.Users;
 using BecodingDesktop.Models.Catalogs;
 using BecodingDesktop.Views.Admin.Users;
+using BecodingDesktop.Views.General;
 using System;
 using System.Windows.Forms;
 
@@ -17,14 +18,7 @@ namespace BecodingDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var prueba = new Role();
-            prueba.UpdateStateItem(new RoleModel()
-            {
-                Name="Administrador",
-                Id=1,
-                State=1
-            });
-            Application.Run(new FrmDetailUser(new DetailUser()));
+            Application.Run(new FrmLogin());
         }
     }
 }

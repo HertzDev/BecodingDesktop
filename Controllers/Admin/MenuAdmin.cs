@@ -1,6 +1,8 @@
 ﻿using BecodingDesktop.Helpers;
 using BecodingDesktop.Interfaces.Admin;
 using BecodingDesktop.Models;
+using BecodingDesktop.Views.Admin;
+using BecodingDesktop.Views.Admin.Users;
 using BecodingDesktop.Views.General.Sales;
 using System;
 using System.Collections.Generic;
@@ -44,7 +46,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = new FrmUsers()
 
                 });
             Options.Add(
@@ -59,7 +61,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    //FormAssigned = new FrmProduct()
                 });
             List<MenuOptionModel> catalogs = new List<MenuOptionModel>
             {
@@ -74,7 +76,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = new FrmTypeInvoice()
                 },
                 new MenuOptionModel()
                 {
@@ -86,7 +88,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    //FormAssigned = new FrmRoles()
                 },
                 new MenuOptionModel()
                 {
@@ -98,7 +100,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = new FrmTypeInvoice()
                 },
                 new MenuOptionModel()
                 {
@@ -110,7 +112,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = new FrmCategories()
                 },
                 new MenuOptionModel()
                 {
@@ -122,7 +124,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = new FrmBrands()
                 },
                 new MenuOptionModel()
                 {
@@ -134,7 +136,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = new FrmModels()
                 }
             };
             Options.Add(new MenuOptionModel()
@@ -148,7 +150,6 @@ namespace BecodingDesktop.Controllers.Admin
                 SubItems = catalogs,
                 ClickEvent = MenuClickEvent,
                 Banner = Properties.Resources.img_banner_sale,
-                FormAssigned = new FrmSale()
             });
             List<MenuOptionModel> reports = new List<MenuOptionModel>
             {

@@ -43,9 +43,13 @@ namespace BecodingDesktop.Views.Admin
             {
                 formActive.Close();
             }
-            form.MdiParent = this;
-            form.Dock = DockStyle.Fill;
-            form?.Show();
+            if(form!=null)
+            {
+                form.MdiParent = this;
+                form.Dock = DockStyle.Fill;
+                form?.Show();
+
+            }
 
 
             UnSetBackColorChangeEvent();
