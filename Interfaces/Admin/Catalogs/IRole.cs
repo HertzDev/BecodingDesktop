@@ -1,6 +1,6 @@
 ﻿using BecodingDesktop.Interfaces.General;
 using BecodingDesktop.Models;
-using BecodingDesktop.Models.Roles;
+using BecodingDesktop.Models.Catalogs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,8 +13,10 @@ namespace BecodingDesktop.Interfaces.Admin.Catalogs
     public interface IRole
     {
         List<RoleModel> GetRoles();
-        MessageModel SetItem();
-        MessageModel UpdateItem();
+        MessageModel SetItem(RoleModel role);
+        MessageModel UpdateItem(RoleModel role);
+
+        MessageModel UpdateStateItem(RoleModel role);
 
         Func<DataRow, RoleModel> GetMapper();
     }
