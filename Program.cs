@@ -17,7 +17,12 @@ namespace BecodingDesktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var prueba = new Role();
-            prueba.SetItem();
+            prueba.UpdateStateItem(new Models.Roles.RoleModel()
+            {
+                Name="Administrador",
+                Id=1,
+                State=1
+            });
             Application.Run(new FrmDetailUser(new DetailUser()));
         }
     }
