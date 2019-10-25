@@ -1,8 +1,11 @@
 ﻿using BecodingDesktop.Helpers;
 using BecodingDesktop.Interfaces.General;
+using BecodingDesktop.Models;
+using BecodingDesktop.Models.General;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -93,6 +96,31 @@ namespace BecodingDesktop.Controllers.General.Products
             };
             controls.Add(txtProductDescription);
             return controls;
+        }
+
+        public Func<DataRow, ProductModel> GetMapper()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ProductModel> GetProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageModel SetItem(ProductModel data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageModel UpdateItem(ProductModel data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageModel UpdateStateItem(ProductModel data)
+        {
+            throw new NotImplementedException();
         }
     }
 }

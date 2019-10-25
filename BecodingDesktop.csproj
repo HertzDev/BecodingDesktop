@@ -66,6 +66,7 @@
     <Compile Include="Controllers\Admin\InvoiceBlock\AddReplaceInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\InvoiceBlock\DetailInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\MenuAdmin.cs" />
+    <Compile Include="Controllers\Admin\Product\Product.cs" />
     <Compile Include="Controllers\Admin\Users\AddReplaceUser.cs" />
     <Compile Include="Controllers\Admin\Users\DetailUser.cs" />
     <Compile Include="Controllers\Employee\MenuEmployee.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Models\Catalogs\Model.cs" />
     <Compile Include="Models\Catalogs\PaymentMethodModel.cs" />
     <Compile Include="Models\Catalogs\TypeInvoiceModel.cs" />
+    <Compile Include="Models\General\ProductModel.cs" />
     <Compile Include="Models\GenericCatalogModel.cs" />
     <Compile Include="Models\MenuOptionModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
