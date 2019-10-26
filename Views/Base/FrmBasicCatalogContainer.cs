@@ -41,9 +41,9 @@ namespace BecodingDesktop.Views.Base
             this.dgvCatalog.AllowUserToDeleteRows = false;
             this.dgvCatalog.ReadOnly = true;
             this.dgvCatalog.RowsDefaultCellStyle.Font= new Font(FontFamily.GenericSansSerif, 12, FontStyle.Regular, GraphicsUnit.Point);
-            this.dgvCatalog.ColumnHeadersDefaultCellStyle.Font = new Font(FontFamily.GenericSansSerif,12,FontStyle.Bold,GraphicsUnit.Point);
-            
+            this.dgvCatalog.ColumnHeadersDefaultCellStyle.Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Bold, GraphicsUnit.Point);
             this.dgvCatalog.EnableHeadersVisualStyles = false;
+
         }
     }
 }

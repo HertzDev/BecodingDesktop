@@ -6,6 +6,7 @@ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace BecodingDesktop.Controllers.Admin.Catalogs
 {
@@ -24,7 +25,7 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
 
         public List<string> GetHeaders()
         {
-            return new List<string>() { "Nombre de Marca", "Fecha de Creación", "Estado", ""};
+            return new List<string>() { "Nombre de Marca", "Fecha de Creación", "Estado", "","Código"};
         }
 
         public Func<DataRow, BrandModel> GetMapper()
@@ -37,8 +38,7 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
                     Name = row["Nombre_Marca"].ToString(),
                     State = Convert.ToInt32(row["Eliminado"].ToString()),
                     CreationDate = DateTime.Parse(row["Creado"].ToString()).ToString("dd-MM-yyyy"),
-                    UpdateDate = DateTime.Parse(row["Actualizado"].ToString()).ToString("dd-MM-yyyy"),
-                    BtnEdit = new MaterialFlatButton() { Text="dasda",Image = Properties.Resources.I_bill_black }
+                    UpdateDate = DateTime.Parse(row["Actualizado"].ToString()).ToString("dd-MM-yyyy")
                 };
             };
             return mapper;

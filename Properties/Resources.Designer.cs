@@ -123,6 +123,16 @@ namespace BecodingDesktop.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap I_edit_gray {
+            get {
+                object obj = ResourceManager.GetObject("I_edit_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap I_model_black {
             get {
                 object obj = ResourceManager.GetObject("I_model_black", resourceCulture);
