@@ -213,6 +213,21 @@ namespace BecodingDesktop.Controllers.General.Products
             return controls;
         }
 
+        public List<Control> CreateView(UserModel user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Control> CreateView(ProductModel user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetHeaders()
+        {
+            throw new NotImplementedException();
+        }
+
         public Func<DataRow, ProductModel> GetMapper()
         {
             throw new NotImplementedException();
