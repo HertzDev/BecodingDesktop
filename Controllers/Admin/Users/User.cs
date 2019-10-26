@@ -62,7 +62,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
 
         public MessageModel UpdateItem(UserModel user)
         {
-            string[,] parameters = { { "@id", "1", user.Id.ToString() }, { "@nombre_usuario", "2", user.Name }, { "@email", "2", user.Email }, { "@password", "2", user.Password } };
+            string[,] parameters = { { "@id", "1", user.Id.ToString() }, { "@nombre_usuario", "2", user.Name }, { "@email", "2", user.Email }, { "@password", "2", user.Password },{ "@role", "1", user.Role.Id.ToString() } };
             return _catalog.SetItem(parameters, "pa_actualizar_usuarios");
 
         }

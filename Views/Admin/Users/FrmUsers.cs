@@ -34,6 +34,7 @@ namespace BecodingDesktop.Views.Admin.Users
             this.txtSearch.TextChanged += SearchTextChanged;
             this.lblTitle.Text = "USUARIOS";
             
+
         }
         public FrmUsers()
         {
@@ -94,6 +95,7 @@ namespace BecodingDesktop.Views.Admin.Users
 
         public void RefreshTable(List<UserModel> users)
         {
+            this.users = users;
             this.dtBussiness.DataSource = users;
         }
 
@@ -109,9 +111,10 @@ namespace BecodingDesktop.Views.Admin.Users
                     Password = this.dtBussiness.Rows[e.RowIndex].Cells["Password"].Value.ToString(),
                     Role = new RoleModel()
                     {
-                        Id = int.Parse(this.dtBussiness.Rows[e.RowIndex].Cells["RoleText"].Value.ToString()),
-                        
+                        Id = int.Parse(((RoleModel)this.dtBussiness.Rows[e.RowIndex].Cells["Role"].Value).Id.ToString()),
+                        Name = this.dtBussiness.Rows[e.RowIndex].Cells["RoleText"].Value.ToString()
                     },
+                    RoleText= this.dtBussiness.Rows[e.RowIndex].Cells["RoleText"].Value.ToString(),
                     State = int.Parse(this.dtBussiness.Rows[e.RowIndex].Cells["State"].Value.ToString()),
                     StateText = this.dtBussiness.Rows[e.RowIndex].Cells["StateText"].Value.ToString(),
                     CreationDate = this.dtBussiness.Rows[e.RowIndex].Cells["CreationDate"].Value.ToString()
@@ -124,7 +127,7 @@ namespace BecodingDesktop.Views.Admin.Users
                 else
                 {
                     var form = new FrmDetailUser(new DetailUser(), user);
-                    form.Show();
+                    form.Show(this);
                 }
             }
         }
@@ -143,34 +146,49 @@ namespace BecodingDesktop.Views.Admin.Users
                     case 0:
                         {
 
-                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Id.ToString().Contains(text) || r.Name.ToLower().Contains(text) || r.StateText.ToLower().Contains(text) || r.CreationDate.Contains(text));
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Id.ToString().Contains(text) || r.Name.ToLower().Contains(text) || r.StateText.ToLower().Contains(text) 
+                            || r.CreationDate.Contains(text) || r.Email.Contains(text) || r.RoleText.Contains(text));
                             break;
                         }
                     case 1:
                         {
-                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Name.ToLower().Contains(text));
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Id.ToString().Contains(text));
                             break;
 
                         }
                     case 2:
                         {
-                            this.dtBussiness.DataSource = this.users.FindAll(r => r.CreationDate.Contains(text));
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Name.ToLower().Contains(text));
                             break;
 
                         }
 
                     case 3:
                         {
-                            this.dtBussiness.DataSource = this.users.FindAll(r => r.StateText.ToLower().Contains(text));
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Email.ToLower().Contains(text));
                             break;
 
                         }
                     case 4:
                         {
-                            this.dtBussiness.DataSource = this.users.FindAll(r => r.Id.ToString().Contains(text));
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.RoleText.ToLower().Contains(text));
                             break;
 
                         }
+                    case 5:
+                        {
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.CreationDate.Contains(text));
+                            break;
+
+                        }
+
+                    case 6:
+                        {
+                            this.dtBussiness.DataSource = this.users.FindAll(r => r.StateText.ToLower().Contains(text));
+                            break;
+
+                        }
+                    
                 }
             }
 
