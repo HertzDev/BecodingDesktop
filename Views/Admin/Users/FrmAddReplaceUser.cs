@@ -68,7 +68,7 @@ namespace BecodingDesktop.Views.Admin.Users
                     else
                     {
                         message = _userLogic.UpdateItem(user);
-                        message = _userLogic.UpdateStateItem(user);
+                        //message = _userLogic.UpdateStateItem(user);
                     }
                     if(message!=null && message.Code == 200)
                     {

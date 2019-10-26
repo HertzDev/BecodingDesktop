@@ -80,7 +80,10 @@ namespace BecodingDesktop.Controllers.Admin.Users
             roles.ForEach(r=> {
                 list.Add(r.Name);
             });
+
             cmbRoles.Items.AddRange(list.ToArray());
+            var index = roles.FindIndex(r => r.Name.Equals(user.RoleText));
+            cmbRoles.SelectedIndex = index;
             controls.Add(cmbRoles);
 
             return controls;
