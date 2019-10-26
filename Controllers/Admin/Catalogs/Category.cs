@@ -25,18 +25,27 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
 
         }
 
+        public List<string> GetHeaders()
+        {
+            return new List<string>() { "Nombre de Categoría", "Fecha de Creación", "Estado", "", "Código" };
+        }
+
         public Func<DataRow, CategoryModel> GetMapper()
         {
             Func<DataRow, CategoryModel> mapper = row =>
             {
-                return new CategoryModel()
+                var data = new CategoryModel()
                 {
+
                     Id = Convert.ToInt32(row["Id"].ToString()),
                     Name = row["Nombre_Categoria"].ToString(),
                     State = Convert.ToInt32(row["Eliminado"].ToString()),
-                    CreationDate = row["Creado"].ToString(),
-                    UpdateDate = row["Actualizado"].ToString()
+                    CreationDate = DateTime.Parse(row["Creado"].ToString()).ToString("dd-MM-yyyy"),
+                    UpdateDate = DateTime.Parse(row["Actualizado"].ToString()).ToString("dd-MM-yyyy")
                 };
+
+                data.StateText = data.State == 0 ? "Activo" : "Inactivo";
+                return data;
             };
             return mapper;
         }

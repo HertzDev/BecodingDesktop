@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BecodingDesktop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,6 @@ namespace BecodingDesktop.Interfaces.Admin
 {
     public interface IUser
     {
-        List<Control> CreateView();
+        List<Control> CreateView(UserModel user);
     }
 }

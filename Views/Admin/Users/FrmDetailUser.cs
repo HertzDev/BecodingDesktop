@@ -1,4 +1,5 @@
 ﻿using BecodingDesktop.Interfaces.Admin;
+using BecodingDesktop.Models;
 using BecodingDesktop.Views.Base;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,11 @@ namespace BecodingDesktop.Views.Admin.Users
     public partial class FrmDetailUser : FrmBaseActionContainer
     {
         private readonly IUser _user;
-        public FrmDetailUser(IUser user)
+        public FrmDetailUser(IUser user,UserModel userModel)
         {
             _user = user;
             this.Size = new Size(450, 400);
-            var controls = _user.CreateView();
+            var controls = _user.CreateView(userModel);
             this.flyContainer.Controls.AddRange(controls.ToArray());
         }
         public FrmDetailUser()

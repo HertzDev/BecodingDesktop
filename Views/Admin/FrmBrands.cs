@@ -118,6 +118,7 @@ namespace BecodingDesktop.Views.Admin
             brands = _brand.GetBrands();
             SetDatagridViewElements(brands);
             this.ClearProperties();
+            this.lblTitle.Text = "MARCAS";
         }
 
         private void CellClicked(object sender, DataGridViewCellEventArgs e)
