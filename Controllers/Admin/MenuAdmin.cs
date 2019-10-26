@@ -139,7 +139,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent =SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmModels()
+                    FormAssigned = new FrmModels(new Model(catalog))
                 }
             };
             Options.Add(new MenuOptionModel()

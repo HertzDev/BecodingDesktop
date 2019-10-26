@@ -14,6 +14,12 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
         {
             _catalog = catalog;
         }
+
+        public List<string> GetHeaders()
+        {
+            return new List<string>() { "Nombre de Modelo", "Fecha de Creación", "Estado", "", "Código" };
+        }
+
         public Func<DataRow, Models.Catalogs.Model> GetMapper()
         {
 
