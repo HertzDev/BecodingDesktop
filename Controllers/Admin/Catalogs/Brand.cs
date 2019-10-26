@@ -32,7 +32,7 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
         {
             Func<DataRow, BrandModel> mapper = row =>
             {
-                return new BrandModel()
+                var brand= new BrandModel()
                 {
                     Id = Convert.ToInt32(row["Id"].ToString()),
                     Name = row["Nombre_Marca"].ToString(),
@@ -40,6 +40,8 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
                     CreationDate = DateTime.Parse(row["Creado"].ToString()).ToString("dd-MM-yyyy"),
                     UpdateDate = DateTime.Parse(row["Actualizado"].ToString()).ToString("dd-MM-yyyy")
                 };
+                brand.StateText = brand.State == 0 ? "Activo" : "Inactivo";
+                return brand;
             };
             return mapper;
 

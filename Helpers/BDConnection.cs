@@ -7,7 +7,7 @@ namespace BecodingDesktop.Helpers
     public class BDConnection
     {
         private readonly string DATABASE = "modulo_ventas";
-        private readonly string DATASOURCE = "MELVIN";
+        private readonly string DATASOURCE = "DESKTOP-HU62KJ8";
         private readonly string USERID = "";
         private readonly string PASSWORD = "";
         private readonly static BDConnection instance = new BDConnection();

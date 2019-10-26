@@ -13,9 +13,6 @@ namespace BecodingDesktop.Models.Catalogs
         public string StateText { get; set; }
         
 
-        public BrandModel()
-        {
-            StateText = State == 0 ? "Activo" : "Inactivo";
-        }
+        
     }
 }
