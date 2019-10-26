@@ -18,12 +18,12 @@ namespace BecodingDesktop.Views.Admin
     {
         private readonly IBrand _brand;
         private int idSelected = 0;
-        public FrmBrands(IBrand brand)
-        {
-            _brand = brand;
-            this.dgvCatalog.DataSource = _brand.GetBrands();
-            var headers = _brand.GetHeaders();
 
+        private void SetDatagridViewElements(List<BrandModel> brands)
+        {
+
+            this.dgvCatalog.DataSource = brands;
+            var headers = _brand.GetHeaders();
             this.dgvCatalog.Columns["Id"].HeaderText = headers[4];
             this.dgvCatalog.Columns["Id"].DisplayIndex = 0;
             this.dgvCatalog.Columns["UpdateDate"].Visible = false;
@@ -37,6 +37,12 @@ namespace BecodingDesktop.Views.Admin
             this.dgvCatalog.Columns.Add(new DataGridViewImageColumn() { Name = "Edit", Image = Properties.Resources.I_edit_gray });
             this.dgvCatalog.Columns["Edit"].HeaderText = headers[3];
             this.dgvCatalog.Columns["Edit"].DisplayIndex = 4;
+            headers.Insert(0, "Todo");
+            this.cmbFilters.Text = "Todo";
+            headers.Remove("");
+            this.cmbFilters.Items.AddRange(headers.ToArray());
+
+
             foreach (var item in this.dgvCatalog.Rows)
             {
                 ((DataGridViewRow)item).Cells["Edit"].Value = Properties.Resources.I_edit_gray;
@@ -44,7 +50,65 @@ namespace BecodingDesktop.Views.Admin
 
             }
             this.dgvCatalog.CellClick += CellClicked;
-            this.btnGuardar.Click +=AddReplaceEvent;
+            this.btnGuardar.Click += AddReplaceEvent;
+            this.txtSearch.TextChanged += SearchTextChanged;
+
+        }
+
+        private void SearchTextChanged(object sender, EventArgs e)
+        {
+            var filter = this.cmbFilters.Items.IndexOf(this.cmbFilters.Text);
+            var text = this.txtSearch.Text.ToLower();
+            if (string.IsNullOrEmpty(text))
+            {
+                this.dgvCatalog.DataSource = this.brands;
+            }
+            else
+            {
+                switch (filter)
+                {
+                    case 0:
+                        {
+
+                            this.dgvCatalog.DataSource = this.brands.FindAll(r => r.Id.ToString().Contains(text) || r.Name.ToLower().Contains(text) || r.StateText.ToLower().Contains(text) || r.CreationDate.Contains(text));
+                            break;
+                        }
+                    case 1:
+                        {
+                            this.dgvCatalog.DataSource = this.brands.FindAll(r => r.Name.ToLower().Contains(text));
+                            break;
+
+                        }
+                    case 2:
+                        {
+                            this.dgvCatalog.DataSource = this.brands.FindAll(r => r.CreationDate.Contains(text));
+                            break;
+
+                        }
+
+                    case 3:
+                        {
+                            this.dgvCatalog.DataSource = this.brands.FindAll(r => r.StateText.ToLower().Contains(text));
+                            break;
+
+                        }
+                    case 4:
+                        {
+                            this.dgvCatalog.DataSource = this.brands.FindAll(r => r.Id.ToString().Contains(text));
+                            break;
+
+                        }
+                }
+            }
+           
+        }
+        List<BrandModel> brands;
+        public FrmBrands(IBrand brand)
+        {
+            _brand = brand;
+            brands = _brand.GetBrands();
+            SetDatagridViewElements(brands);
+            this.ClearProperties();
         }
 
         private void CellClicked(object sender, DataGridViewCellEventArgs e)
@@ -53,6 +117,11 @@ namespace BecodingDesktop.Views.Admin
             {
                 this.txtName.Text = this.dgvCatalog.Rows[e.RowIndex].Cells["Name"].Value.ToString();
                 this.btnGuardar.Text = "ACTUALIZAR";
+                var state= this.dgvCatalog.Rows[e.RowIndex].Cells["State"].Value.ToString().Equals("0");
+                this.rdoActive.Checked = state;
+                this.rdoInactive.Checked = !state;
+                this.rdoActive.Visible = true;
+                this.rdoInactive.Visible = true;
                 this.idSelected = int.Parse(this.dgvCatalog.Rows[e.RowIndex].Cells["Id"].Value.ToString());
             }
         }
@@ -66,8 +135,17 @@ namespace BecodingDesktop.Views.Admin
                 if (result.Equals(DialogResult.OK)) 
                 {
                     MessageModel message = null;
-                    message = btnGuardar.Text.ToLower().Equals("guardar") ? 
-                    _brand.SetItem(new BrandModel() { Name = name }):_brand.UpdateItem(new BrandModel() { Name = name,Id=idSelected });
+                    if (btnGuardar.Text.Equals("guardar"))
+                    {
+                        message = _brand.SetItem(new BrandModel() { Name = name });
+                    }
+                    else
+                    {
+                        message=_brand.UpdateItem(new BrandModel() { Name = name, Id = idSelected });
+
+                        message = _brand.UpdateStateItem(new BrandModel() { State = (this.rdoActive.Checked)?0:1, Id = idSelected });
+
+                    }
                     if (message.Code == 200)
                     {
                         this.dgvCatalog.DataSource = _brand.GetBrands();
@@ -91,7 +169,9 @@ namespace BecodingDesktop.Views.Admin
         {
             this.btnGuardar.Text = "GUARDAR";
             this.txtName.Text = string.Empty;
-        
+            this.lblTotalCount.Text = this.dgvCatalog.Rows.Count.ToString();
+            this.rdoActive.Visible = false;
+            this.rdoInactive.Visible = false;
         }
         public FrmBrands()
         {
