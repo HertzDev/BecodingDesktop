@@ -30,13 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitulo = new MaterialSkin.Controls.MaterialLabel();
-            this.lblNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnGuardar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCatalog = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalog)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,11 +46,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.57658F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanel1.Controls.Add(this.lblTitulo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.materialSingleLineTextField1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.dgvCatalog, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -79,22 +79,22 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "TITULO";
             // 
-            // lblNombre
+            // txtName
             // 
-            this.lblNombre.Depth = 0;
-            this.lblNombre.Hint = "Ingrese nombre";
-            this.lblNombre.Location = new System.Drawing.Point(13, 68);
-            this.lblNombre.MaxLength = 32767;
-            this.lblNombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.PasswordChar = '\0';
-            this.lblNombre.SelectedText = "";
-            this.lblNombre.SelectionLength = 0;
-            this.lblNombre.SelectionStart = 0;
-            this.lblNombre.Size = new System.Drawing.Size(497, 23);
-            this.lblNombre.TabIndex = 4;
-            this.lblNombre.TabStop = false;
-            this.lblNombre.UseSystemPasswordChar = false;
+            this.txtName.Depth = 0;
+            this.txtName.Hint = "Ingrese nombre";
+            this.txtName.Location = new System.Drawing.Point(13, 68);
+            this.txtName.MaxLength = 32767;
+            this.txtName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.SelectedText = "";
+            this.txtName.SelectionLength = 0;
+            this.txtName.SelectionStart = 0;
+            this.txtName.Size = new System.Drawing.Size(497, 23);
+            this.txtName.TabIndex = 4;
+            this.txtName.TabStop = false;
+            this.txtName.UseSystemPasswordChar = false;
             // 
             // btnGuardar
             // 
@@ -140,15 +140,15 @@
             this.comboBox1.Size = new System.Drawing.Size(405, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvCatalog
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 215);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(774, 222);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvCatalog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvCatalog, 2);
+            this.dgvCatalog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCatalog.Location = new System.Drawing.Point(13, 215);
+            this.dgvCatalog.Name = "dgvCatalog";
+            this.dgvCatalog.Size = new System.Drawing.Size(774, 222);
+            this.dgvCatalog.TabIndex = 7;
             // 
             // FrmBasicCatalogContainer
             // 
@@ -164,7 +164,7 @@
             this.Text = "FrmBasicCatalogContainer";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,10 +173,10 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MaterialSkin.Controls.MaterialLabel lblTitulo;
-        private MaterialSkin.Controls.MaterialRaisedButton btnGuardar;
-        private MaterialSkin.Controls.MaterialSingleLineTextField lblNombre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.DataGridView dgvCatalog;
+        protected MaterialSkin.Controls.MaterialRaisedButton btnGuardar;
+        protected MaterialSkin.Controls.MaterialSingleLineTextField txtName;
+        protected MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        protected System.Windows.Forms.ComboBox comboBox1;
     }
 }
