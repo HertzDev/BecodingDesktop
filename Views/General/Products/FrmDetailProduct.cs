@@ -12,7 +12,7 @@ namespace BecodingDesktop.Views.General.Products
             _product = product;
 
             this.Size = new Size(500, 500);
-            var controls = _product.CreateView();
+            var controls = _product.CreateView(null);
             this.flyContainer.Controls.AddRange(controls.ToArray());
 
         }

@@ -16,86 +16,78 @@ namespace BecodingDesktop.Controllers.General.Products
 {
     public class AddReplaceProduct : IProduct
     {
-        public List<Control> CreateView()
+        public List<Control> CreateView(ProductModel product)
         {
             List<Control> controls = new List<Control>();
             var font = new Font(SystemFonts.DefaultFont, FontStyle.Bold);
             var margin = new Padding(10, 20, 10, 0);
-            var size = new Size(400,30);
+            var size = new Size(400, 30);
             MaterialSingleLineTextField txtProductName = new MaterialSingleLineTextField()
             {
                 Name = "txtProductName",
-                Hint = "Ingresa el nombre del Producto",
+                Hint = "Ingresa el nombre",
                 Margin = margin,
-                Size=size,
-                Dock=DockStyle.Fill
+                Size = size,
+                Dock = DockStyle.Fill,
+                Text = string.IsNullOrEmpty(product?.Name) ? string.Empty : product?.Name
             };
             controls.Add(txtProductName);
 
-            ComboBox cmbCategories = new ComboBox()
+            MaterialSingleLineTextField txtPrice = new MaterialSingleLineTextField()
             {
-                Name="cmbCategories",
-                Size = size,
-                Margin =margin,
-                Dock = DockStyle.Fill
-            };
-
-            controls.Add(cmbCategories);
-
-
-            ComboBox cmbBrands = new ComboBox()
-            {
-                Name = "cmbBrands",
-                Size = size,
+                Name = "txtPrice",
+                Hint = "Ingresa precio",
                 Margin = margin,
-                Dock = DockStyle.Fill
-            };
-
-            controls.Add(cmbBrands);
-
-
-            ComboBox cmbModels = new ComboBox()
-            {
-                Name = "cmbModels",
                 Size = size,
+                Dock = DockStyle.Fill,
+                Text = string.IsNullOrEmpty(product?.Price.ToString()) ? string.Empty : product?.Price.ToString()
+            };
+            controls.Add(txtPrice);
+
+            MaterialSingleLineTextField txtExistence = new MaterialSingleLineTextField()
+            {
+                Name = "txtExistence",
+                Hint = "Ingresa las existencias",
                 Margin = margin,
-                Dock = DockStyle.Fill
-            };
-
-            controls.Add(cmbModels);
-
-            
-            MaterialSingleLineTextField txtProductPrice = new MaterialSingleLineTextField()
-            {
-                Name = "txtProductPrice",
-                Hint = "Ingresa el precio del Producto",
                 Size = size,
-                Margin=margin,
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Fill,
+                UseSystemPasswordChar = true,
+                Text = string.IsNullOrEmpty(product?.Existence.ToString()) ? string.Empty : product?.Existence.ToString()
             };
+            controls.Add(txtExistence);
 
-            controls.Add(txtProductPrice);
-
-            MaterialSingleLineTextField txtProductQuantity = new MaterialSingleLineTextField()
+            MaterialSingleLineTextField txtProductCode = new MaterialSingleLineTextField()
             {
-                Name = "txtProductQuantity",
-                Hint = "Ingrese la cantidad de unidades en existencia",
-                Size = size,
+                Name = "txtProductCode",
+                Hint = "Ingresa el codigo de producto",
                 Margin = margin,
-                Dock = DockStyle.Fill
-            };
-            controls.Add(txtProductQuantity);
-
-            MaterialSingleLineTextField txtProductDescription = new MaterialSingleLineTextField()
-            {
-                Name = "txtProductDescription",
-                Hint = "Ingrese la descripción del Producto",
                 Size = size,
-                Margin = margin,
-
+                Dock = DockStyle.Fill,
+                UseSystemPasswordChar = true,
+                Text = string.IsNullOrEmpty(product?.ProductCode) ? string.Empty : product?.ProductCode
             };
-            controls.Add(txtProductDescription);
+            controls.Add(txtProductCode);
+
+
+            MaterialSingleLineTextField txtDesc = new MaterialSingleLineTextField()
+            {
+                Name = "txtDesc",
+                Hint = "Ingresa la descripcion de producto",
+                Margin = margin,
+                Size = size,
+                Dock = DockStyle.Fill,
+                UseSystemPasswordChar = true,
+                Text = string.IsNullOrEmpty(product?.Description) ? string.Empty : product?.Description
+            };
+            controls.Add(txtDesc);
+
             return controls;
+        }
+
+
+        public List<string> GetHeaders()
+        {
+            throw new NotImplementedException();
         }
 
         public Func<DataRow, ProductModel> GetMapper()

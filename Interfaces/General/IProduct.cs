@@ -13,7 +13,7 @@ namespace BecodingDesktop.Interfaces.General
 {
     public interface IProduct
     {
-        List<Control> CreateView();
+        List<Control> CreateView(ProductModel user);
         List<ProductModel> GetProducts();
         MessageModel SetItem(ProductModel data);
         MessageModel UpdateItem(ProductModel data);
@@ -21,5 +21,6 @@ namespace BecodingDesktop.Interfaces.General
         MessageModel UpdateStateItem(ProductModel data);
 
         Func<DataRow, ProductModel> GetMapper();
+        List<string> GetHeaders();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BecodingDesktop.Controllers.Admin.Catalogs;
 using BecodingDesktop.Controllers.Admin.Users;
+using BecodingDesktop.Controllers.General.Products;
 using BecodingDesktop.Helpers.Enums;
 using BecodingDesktop.Views.Admin;
 using BecodingDesktop.Views.Admin.Users;
@@ -60,7 +61,7 @@ namespace BecodingDesktop.Helpers
 
                 case MenuOptionName.PRODUCTS:
                     {
-                        formSelected = new FrmProduct();
+                        formSelected = new FrmProduct(new Product(catalog));
                         break;
                     }
 
@@ -84,6 +85,18 @@ namespace BecodingDesktop.Helpers
                 case MenuOptionName.USERSDETAIL:
                     {
                         formSelected = new FrmDetailUser(new DetailUser(), null);
+                        break;
+                    }
+
+                case MenuOptionName.PRODUCTSADO:
+                    {
+                        formSelected = new FrmAddReplaceProduct(new AddReplaceProduct(), null);
+                        break;
+                    }
+
+                case MenuOptionName.PRODUCTSDETAIL:
+                    {
+                        formSelected = new FrmDetailProduct();
                         break;
                     }
             }
