@@ -74,6 +74,7 @@
     <Compile Include="Controllers\General\Products\DetailProduct.cs" />
     <Compile Include="Controllers\General\Sales\AddReplaceSale.cs" />
     <Compile Include="Controllers\General\Sales\DetailSale.cs" />
+    <Compile Include="Controllers\General\Sales\Sale.cs" />
     <Compile Include="Helpers\BDConnection.cs" />
     <Compile Include="Helpers\ColorManager.cs" />
     <Compile Include="Helpers\Enums\MenuOptionName.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Interfaces\Admin\IUser.cs" />
     <Compile Include="Interfaces\Employee\IMenuEmployee.cs" />
     <Compile Include="Interfaces\General\ICatalogBase.cs" />
+    <Compile Include="Interfaces\General\ILogicSale.cs" />
     <Compile Include="Interfaces\General\IProduct.cs" />
     <Compile Include="Interfaces\General\ISale.cs" />
     <Compile Include="Interfaces\IMenuOption.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Models\Catalogs\PaymentMethodModel.cs" />
     <Compile Include="Models\Catalogs\TypeInvoiceModel.cs" />
     <Compile Include="Models\General\ProductModel.cs" />
+    <Compile Include="Models\General\SaleModel.cs" />
     <Compile Include="Models\GenericCatalogModel.cs" />
     <Compile Include="Models\MenuOptionModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
