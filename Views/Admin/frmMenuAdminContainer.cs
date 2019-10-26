@@ -1,6 +1,7 @@
 ﻿using BecodingDesktop.Helpers;
 using BecodingDesktop.Interfaces;
 using BecodingDesktop.Interfaces.Admin;
+using BecodingDesktop.Interfaces.Admin.Catalogs;
 using BecodingDesktop.Models;
 using BecodingDesktop.Views.Base;
 using System;
@@ -15,6 +16,7 @@ namespace BecodingDesktop.Views.Admin
     {
 
         private readonly IMenuAdmin _menuOption;
+        private readonly IBrand _brand;
         private readonly List<MenuOptionModel> _options = new List<MenuOptionModel>();
 
         public FrmMenuAdminContainer(IMenuAdmin menuOption)
@@ -53,7 +55,7 @@ namespace BecodingDesktop.Views.Admin
             var formActive = this.ActiveMdiChild;
             if (formActive != null)
             {
-                formActive.Close();
+                formActive.Hide();
             }
             if(form!=null)
             {

@@ -19,5 +19,6 @@ namespace BecodingDesktop.Interfaces.Admin.Catalogs
 
         Func<DataRow, BrandModel> GetMapper();
 
+        List<string> GetHeaders();
     }
 }
