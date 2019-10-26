@@ -42,49 +42,57 @@ namespace BecodingDesktop.Views.Admin.Users
 
         private void ClickEvent(object sender, EventArgs e)
         {
-            var user = new UserModel()
+            if (this.flyContainer.Controls[2].Text.Equals(this.flyContainer.Controls[3].Text))
             {
-                Id = (userSend!=null)?userSend.Id:0,
-                Name = this.flyContainer.Controls[0].Text,
-                Email = this.flyContainer.Controls[1].Text,
-                Password = this.flyContainer.Controls[2].Text,
-                Role = new RoleModel()
+                var user = new UserModel()
                 {
-                    Id = ((ComboBox)this.flyContainer.Controls[4]).SelectedIndex+1,
-                    Name = ((ComboBox)this.flyContainer.Controls[4]).SelectedItem?.ToString()
+                    Id = (userSend != null) ? userSend.Id : 0,
+                    Name = this.flyContainer.Controls[0].Text,
+                    Email = this.flyContainer.Controls[1].Text,
+                    Password = this.flyContainer.Controls[2].Text,
+                    Role = new RoleModel()
+                    {
+                        Id = ((ComboBox)this.flyContainer.Controls[4]).SelectedIndex + 1,
+                        Name = ((ComboBox)this.flyContainer.Controls[4]).SelectedItem?.ToString()
+                    }
+                };
+                if (IsAllCompleteValues(user))
+                {
+
+                    DialogResult result = MessageBox.Show("¿Estás seguro que deseas " + this.btnMainAction.Text + " el usuario?", "asas", MessageBoxButtons.OKCancel);
+                    if (result.Equals(DialogResult.OK))
+                    {
+                        MessageModel message = null;
+                        if (this.btnMainAction.Text.ToLower().Equals("guardar"))
+                        {
+                            message = _userLogic.SetItem(user);
+                        }
+                        else
+                        {
+                            message = _userLogic.UpdateItem(user);
+                            //message = _userLogic.UpdateStateItem(user);
+                        }
+                        if (message != null && message.Code == 200)
+                        {
+                            var users = this.Owner.ActiveMdiChild;
+                            ((FrmUsers)users).RefreshTable(_userLogic.GetUsers());
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(message.Message);
+                        }
+                    }
                 }
-            };
-            if (IsAllCompleteValues(user))
-            {
-                
-                DialogResult result = MessageBox.Show("¿Estás seguro que deseas "+this.btnMainAction.Text+" el usuario?","asas",MessageBoxButtons.OKCancel);
-                if(result.Equals(DialogResult.OK))
+                else
                 {
-                    MessageModel message = null;
-                    if (this.btnMainAction.Text.ToLower().Equals("guardar"))
-                    {
-                        message = _userLogic.SetItem(user);
-                    }
-                    else
-                    {
-                        message = _userLogic.UpdateItem(user);
-                        //message = _userLogic.UpdateStateItem(user);
-                    }
-                    if(message!=null && message.Code == 200)
-                    {
-                        var users = this.Owner.ActiveMdiChild;
-                        ((FrmUsers)users).RefreshTable(_userLogic.GetUsers());
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(message.Message);
-                    }
+                    MessageBox.Show("Debes ingresar todos los campos para poder continuar");
                 }
             }
             else
             {
-                MessageBox.Show("Debes ingresar todos los campos para poder continuar");
+                MessageBox.Show("Las contraseñas ingresadas no coinciden");
+
             }
         }
 

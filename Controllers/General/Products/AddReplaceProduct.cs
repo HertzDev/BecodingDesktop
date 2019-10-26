@@ -28,7 +28,6 @@ namespace BecodingDesktop.Controllers.General.Products
                 Hint = "Ingresa el nombre",
                 Margin = margin,
                 Size = size,
-                Dock = DockStyle.Fill,
                 Text = string.IsNullOrEmpty(product?.Name) ? string.Empty : product?.Name
             };
             controls.Add(txtProductName);
@@ -39,7 +38,6 @@ namespace BecodingDesktop.Controllers.General.Products
                 Hint = "Ingresa precio",
                 Margin = margin,
                 Size = size,
-                Dock = DockStyle.Fill,
                 Text = string.IsNullOrEmpty(product?.Price.ToString()) ? string.Empty : product?.Price.ToString()
             };
             controls.Add(txtPrice);
@@ -51,7 +49,6 @@ namespace BecodingDesktop.Controllers.General.Products
                 Margin = margin,
                 Size = size,
                 Dock = DockStyle.Fill,
-                UseSystemPasswordChar = true,
                 Text = string.IsNullOrEmpty(product?.Existence.ToString()) ? string.Empty : product?.Existence.ToString()
             };
             controls.Add(txtExistence);
@@ -63,7 +60,6 @@ namespace BecodingDesktop.Controllers.General.Products
                 Margin = margin,
                 Size = size,
                 Dock = DockStyle.Fill,
-                UseSystemPasswordChar = true,
                 Text = string.IsNullOrEmpty(product?.ProductCode) ? string.Empty : product?.ProductCode
             };
             controls.Add(txtProductCode);
@@ -75,8 +71,6 @@ namespace BecodingDesktop.Controllers.General.Products
                 Hint = "Ingresa la descripcion de producto",
                 Margin = margin,
                 Size = size,
-                Dock = DockStyle.Fill,
-                UseSystemPasswordChar = true,
                 Text = string.IsNullOrEmpty(product?.Description) ? string.Empty : product?.Description
             };
             controls.Add(txtDesc);

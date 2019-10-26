@@ -64,7 +64,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
                 Size = size,
                 Dock = DockStyle.Fill,
                 UseSystemPasswordChar = true,
-                Text = string.IsNullOrEmpty(user?.Password) ? string.Empty : user?.Password
+                Text = string.Empty
             };
             controls.Add(txtPasswordConfirm);
 

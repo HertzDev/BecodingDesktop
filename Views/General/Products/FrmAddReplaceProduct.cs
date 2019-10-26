@@ -26,10 +26,13 @@ namespace BecodingDesktop.Views.General.Products
         {
             _product = iproduct;
             this.Size = new Size(500, 500);
-            var controls = _product.CreateView(product); 
+            var controls = _product.CreateView(product);
             this.flyContainer.Controls.AddRange(controls.ToArray());
             this.lblTitle.AutoSize = true;
             this.lblTitle.Size = new Size(500, 80);
+            this.btnMainAction.Text = (product != null) ? "GUARDAR" : "ACTUALIZAR";
+            this.btnMainAction.Click += ClickEvent;
+            this.btnCancel.Click += CloseEvent;
         }
         public FrmAddReplaceProduct()
         {
