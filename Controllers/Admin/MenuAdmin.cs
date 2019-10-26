@@ -1,8 +1,10 @@
-﻿using BecodingDesktop.Helpers;
+﻿using BecodingDesktop.Controllers.Admin.Catalogs;
+using BecodingDesktop.Helpers;
 using BecodingDesktop.Interfaces.Admin;
 using BecodingDesktop.Models;
 using BecodingDesktop.Views.Admin;
 using BecodingDesktop.Views.Admin.Users;
+using BecodingDesktop.Views.General.Products;
 using BecodingDesktop.Views.General.Sales;
 using System;
 using System.Collections.Generic;
@@ -61,8 +63,9 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    //FormAssigned = new FrmProduct()
+                    FormAssigned = new FrmProduct()
                 });
+            var catalog = new CatalogBase();
             List<MenuOptionModel> catalogs = new List<MenuOptionModel>
             {
                 new MenuOptionModel()
@@ -124,7 +127,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmBrands()
+                    FormAssigned = new FrmBrands(new Brand(catalog))
                 },
                 new MenuOptionModel()
                 {
