@@ -68,7 +68,7 @@ namespace BecodingDesktop.Views.Admin
 
 
             UnSetBackColorChangeEvent();
-            for (int i=1;i<6;i++)
+            for (int i=1;i<5;i++)
             {
                 if(i!=tag)
                 {
@@ -77,9 +77,8 @@ namespace BecodingDesktop.Views.Admin
                         mainMenu.Items[i].Image = _options.First(op=>op.Id==i).UnSelected;
                         
                 }
-
             }
-            mainMenu.Items[6].Image = _options.First(op => op.Id == tag).Banner;
+            mainMenu.Items[5].Image = _options.First(op => op.Id == tag).Banner;
             SetBackColorChangeEvent();
         }
 
@@ -111,13 +110,13 @@ namespace BecodingDesktop.Views.Admin
                     form = FormManager.GetFormSelected(r.FormAssigned);
                 }
             });
-            _options[4].SubItems.ForEach(r =>
-            {
-                if (tag == r.Id)
-                {
-                    form = FormManager.GetFormSelected(r.FormAssigned);
-                }
-            });
+            //_options[4].SubItems.ForEach(r =>
+            //{
+            //    if (tag == r.Id)
+            //    {
+            //        form = FormManager.GetFormSelected(r.FormAssigned);
+            //    }
+            //});
             var formActive = this.ActiveMdiChild;
             if (formActive != null)
             {
@@ -137,14 +136,14 @@ namespace BecodingDesktop.Views.Admin
                     image = r.Banner;
                 }
             });
-            _options[4].SubItems.ForEach(r =>
-            {
-                if (tag == r.Id)
-                {
-                    image = r.Banner;
-                }
-            });
-            mainMenu.Items[6].Image = image;
+            //_options[4].SubItems.ForEach(r =>
+            //{
+            //    if (tag == r.Id)
+            //    {
+            //        image = r.Banner;
+            //    }
+            //});
+            mainMenu.Items[5].Image = image;
 
         }
     }
