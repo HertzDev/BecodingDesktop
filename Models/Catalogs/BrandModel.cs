@@ -10,6 +10,12 @@ namespace BecodingDesktop.Models.Catalogs
 {
     public class BrandModel:GenericCatalogModel
     {
-        public MaterialFlatButton BtnEdit { get; set; }
+        public string StateText { get; set; }
+        
+
+        public BrandModel()
+        {
+            StateText = State == 0 ? "Activo" : "Inactivo";
+        }
     }
 }

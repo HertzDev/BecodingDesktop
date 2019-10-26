@@ -337,7 +337,15 @@
   <ItemGroup>
     <None Include="Resources\img_banner_sale.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\i_edit_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i_edit_gray1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_edit_gray2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

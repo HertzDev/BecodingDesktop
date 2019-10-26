@@ -54,7 +54,7 @@
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(144, 15);
             this.toolStripStatusLabel3.Text = "HUMBERTO GALDAMEZ ";
             // 
-            // frmBaseMenuContainer
+            // FrmBaseMenuContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,7 +63,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
-            this.Name = "frmBaseMenuContainer";
+            this.Name = "FrmBaseMenuContainer";
             this.Text = "frmBaseMenuContainer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mainMenu.ResumeLayout(false);
