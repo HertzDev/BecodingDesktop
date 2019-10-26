@@ -56,7 +56,12 @@ namespace BecodingDesktop.Views.Admin
             this.dgvCatalog.CellClick += CellClicked;
             this.btnGuardar.Click += AddReplaceEvent;
             this.txtSearch.TextChanged += SearchTextChanged;
+            this.btnCancel.Click += CancelEvent;
+        }
 
+        private void CancelEvent(object sender, EventArgs e)
+        {
+            this.ClearProperties();
         }
 
         private void SearchTextChanged(object sender, EventArgs e)
@@ -117,10 +122,11 @@ namespace BecodingDesktop.Views.Admin
 
         private void CellClicked(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0) 
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0) 
             {
                 this.txtName.Text = this.dgvCatalog.Rows[e.RowIndex].Cells["Name"].Value.ToString();
                 this.btnGuardar.Text = "ACTUALIZAR";
+                this.btnCancel.Visible = true;
                 var state= this.dgvCatalog.Rows[e.RowIndex].Cells["State"].Value.ToString().Equals("0");
                 this.rdoActive.Checked = state;
                 this.rdoInactive.Checked = !state;
@@ -139,7 +145,7 @@ namespace BecodingDesktop.Views.Admin
                 if (result.Equals(DialogResult.OK)) 
                 {
                     MessageModel message = null;
-                    if (btnGuardar.Text.Equals("guardar"))
+                    if (btnGuardar.Text.ToLower().Equals("guardar"))
                     {
                         message = _brand.SetItem(new BrandModel() { Name = name });
                     }
@@ -176,6 +182,7 @@ namespace BecodingDesktop.Views.Admin
             this.lblTotalCount.Text = this.dgvCatalog.Rows.Count.ToString();
             this.rdoActive.Visible = false;
             this.rdoInactive.Visible = false;
+            this.btnCancel.Visible = false;
         }
         public FrmBrands()
         {

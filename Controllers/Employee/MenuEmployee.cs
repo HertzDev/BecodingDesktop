@@ -1,6 +1,9 @@
-﻿using BecodingDesktop.Helpers;
+﻿using BecodingDesktop.Controllers.Admin.Catalogs;
+using BecodingDesktop.Helpers;
+using BecodingDesktop.Helpers.Enums;
 using BecodingDesktop.Interfaces.Employee;
 using BecodingDesktop.Models;
+using BecodingDesktop.Views.General.Products;
 using BecodingDesktop.Views.General.Sales;
 using System;
 using System.Collections.Generic;
@@ -48,7 +51,7 @@ namespace BecodingDesktop.Controllers.Employee
                   ClickEvent = MenuClickEvent,
                   SelectedState = false,
                   Banner = Properties.Resources.img_banner_sale,
-                  FormAssigned = new FrmSale()
+                  FormAssigned = MenuOptionName.SALES
               });
             Options.Add(
                 new MenuOptionModel()
@@ -62,7 +65,7 @@ namespace BecodingDesktop.Controllers.Employee
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned =MenuOptionName.USERS
 
                 });
 
@@ -117,6 +120,27 @@ namespace BecodingDesktop.Controllers.Employee
         public void Dispose()
         {
             throw new NotImplementedException();
+        }
+
+        public Form GetFormSelected(MenuOptionName option)
+        {
+            Form formSelected = null;
+
+            var catalog = new CatalogBase();
+            switch (option)
+            {
+                case MenuOptionName.SALES:
+                    {
+                        formSelected = new FrmSale();
+                        break;
+                    }
+                case MenuOptionName.PRODUCTS:
+                    {
+                        formSelected = new FrmProduct();
+                        break;
+                    }
+            }
+            return formSelected;
         }
     }
 }

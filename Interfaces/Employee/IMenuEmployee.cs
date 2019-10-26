@@ -1,4 +1,5 @@
-﻿using BecodingDesktop.Models;
+﻿using BecodingDesktop.Helpers.Enums;
+using BecodingDesktop.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace BecodingDesktop.Interfaces.Employee
     {
         List<MenuOptionModel> MenuOptionInit();
         void MenuClickEvent(object sender, EventArgs e);
+        Form GetFormSelected(MenuOptionName option);
         List<ToolStripItem> UnSelectedAll();
     }
 }
