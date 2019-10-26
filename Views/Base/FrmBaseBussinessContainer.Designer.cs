@@ -119,7 +119,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.33429F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.6657F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.tableLayoutPanel1.Controls.Add(this.txtSearch, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbFilters, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblTitle, 0, 0);
@@ -144,7 +144,7 @@
             this.lblTitleTotal.AutoSize = true;
             this.lblTitleTotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTitleTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleTotal.Location = new System.Drawing.Point(530, 418);
+            this.lblTitleTotal.Location = new System.Drawing.Point(529, 418);
             this.lblTitleTotal.Name = "lblTitleTotal";
             this.lblTitleTotal.Size = new System.Drawing.Size(153, 32);
             this.lblTitleTotal.TabIndex = 5;
@@ -154,7 +154,7 @@
             // 
             this.lblTotalCount.AutoSize = true;
             this.lblTotalCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCount.Location = new System.Drawing.Point(689, 418);
+            this.lblTotalCount.Location = new System.Drawing.Point(688, 418);
             this.lblTotalCount.Name = "lblTotalCount";
             this.lblTotalCount.Size = new System.Drawing.Size(16, 16);
             this.lblTotalCount.TabIndex = 7;
