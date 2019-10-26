@@ -122,25 +122,6 @@ namespace BecodingDesktop.Controllers.Employee
             throw new NotImplementedException();
         }
 
-        public Form GetFormSelected(MenuOptionName option)
-        {
-            Form formSelected = null;
-
-            var catalog = new CatalogBase();
-            switch (option)
-            {
-                case MenuOptionName.SALES:
-                    {
-                        formSelected = new FrmSale();
-                        break;
-                    }
-                case MenuOptionName.PRODUCTS:
-                    {
-                        formSelected = new FrmProduct();
-                        break;
-                    }
-            }
-            return formSelected;
-        }
+       
     }
 }

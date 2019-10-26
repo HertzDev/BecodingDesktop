@@ -9,7 +9,6 @@ namespace BecodingDesktop.Interfaces.Admin
     public interface IMenuAdmin
     {
         List<MenuOptionModel> MenuOptionInit();
-        Form GetFormSelected(MenuOptionName option);
         void MenuClickEvent(object sender, EventArgs e);
         void SubMenuClickEvent(object sender, EventArgs e);
         List<ToolStripItem> UnSelectedAll();

@@ -1,4 +1,5 @@
 ﻿using BecodingDesktop.Interfaces.Admin;
+using BecodingDesktop.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,7 +12,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
 {
     class DetailUser : IUser
     {
-        public List<Control> CreateView()
+        public List<Control> CreateView(UserModel user)
         {
             List<Control> controls = new List<Control>();
             var font = new Font(SystemFonts.DefaultFont, FontStyle.Bold);
@@ -51,7 +52,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             Label lblUserCode = new Label()
             {
                 Name = "lblUserCode",
-                Text = "HE343SAD",
+                Text = string.IsNullOrEmpty(user?.Id.ToString()) ? string.Empty : user?.Id.ToString(),
                 Font = font,
                 Dock = DockStyle.Left
             };
@@ -69,7 +70,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             Label lblUserName = new Label()
             {
                 Name = "lblUserName",
-                Text = "Humberto Antonio Galdamez Chavez",
+                Text = string.IsNullOrEmpty(user?.Name) ? string.Empty : user?.Name,
                 Font = font,
                 Dock = DockStyle.Fill
             };
@@ -87,7 +88,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             Label lblEmail = new Label()
             {
                 Name = "lblEmail",
-                Text = "galdamez.humberto@beconding.com",
+                Text = string.IsNullOrEmpty(user?.Email) ? string.Empty : user?.Email,
                 Font = font,
                 Dock = DockStyle.Fill
             };
@@ -105,7 +106,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             Label lblRole = new Label()
             {
                 Name = "lblRole",
-                Text = "Administrador",
+                Text = string.IsNullOrEmpty(user?.Role.Name) ? string.Empty : user?.Role.Name,
                 Font = font,
                 Dock = DockStyle.Fill
             };
@@ -123,7 +124,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             Label lblState = new Label()
             {
                 Name = "lblState",
-                Text = "Activo",
+                Text = string.IsNullOrEmpty(user?.StateText) ? string.Empty : user?.StateText,
                 Font = font,
                 Dock = DockStyle.Fill
             };
@@ -144,7 +145,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             Label lblCreationDate = new Label()
             {
                 Name = "lblCreationDate",
-                Text = "2019-10-05",
+                Text = string.IsNullOrEmpty(user?.CreationDate) ? string.Empty : user?.CreationDate,
                 Font = font,
                 Dock = DockStyle.Fill
             };

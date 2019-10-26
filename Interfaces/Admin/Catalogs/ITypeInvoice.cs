@@ -11,6 +11,8 @@ namespace BecodingDesktop.Interfaces.Admin.Catalogs
 {
     public interface ITypeInvoice
     {
+        List<string> GetHeaders();
+
         List<TypeInvoiceModel> GetTypesInvoices();
         MessageModel SetItem(TypeInvoiceModel invoice);
         MessageModel UpdateItem(TypeInvoiceModel invoice);
