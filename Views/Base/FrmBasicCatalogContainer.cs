@@ -44,6 +44,7 @@ namespace BecodingDesktop.Views.Base
             this.dgvCatalog.ColumnHeadersDefaultCellStyle.Font = new Font(FontFamily.GenericSansSerif,12,FontStyle.Bold,GraphicsUnit.Point);
             
             this.dgvCatalog.EnableHeadersVisualStyles = false;
+
         }
     }
 }
