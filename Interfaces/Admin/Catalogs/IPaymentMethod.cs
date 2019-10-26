@@ -17,6 +17,8 @@ namespace BecodingDesktop.Interfaces.Admin.Catalogs
         MessageModel UpdateStateItem(PaymentMethodModel method);
 
         Func<DataRow, PaymentMethodModel> GetMapper();
+        List<string> GetHeaders();
+
 
     }
 }

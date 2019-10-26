@@ -69,6 +69,7 @@
     <Compile Include="Controllers\Admin\Product\Product.cs" />
     <Compile Include="Controllers\Admin\Users\AddReplaceUser.cs" />
     <Compile Include="Controllers\Admin\Users\DetailUser.cs" />
+    <Compile Include="Controllers\Admin\Users\User.cs" />
     <Compile Include="Controllers\Employee\MenuEmployee.cs" />
     <Compile Include="Controllers\General\Products\AddReplaceProduct.cs" />
     <Compile Include="Controllers\General\Products\DetailProduct.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Interfaces\Admin\IInvoiceBlock.cs" />
     <Compile Include="Interfaces\Admin\IMenuAdmin.cs" />
     <Compile Include="Interfaces\Admin\IUser.cs" />
+    <Compile Include="Interfaces\Admin\Users\IUserLogic.cs" />
     <Compile Include="Interfaces\Employee\IMenuEmployee.cs" />
     <Compile Include="Interfaces\General\ICatalogBase.cs" />
     <Compile Include="Interfaces\General\ILogicSale.cs" />

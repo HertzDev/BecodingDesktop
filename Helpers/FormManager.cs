@@ -54,7 +54,7 @@ namespace BecodingDesktop.Helpers
 
                 case MenuOptionName.PAYMENTMETHODS:
                     {
-                        formSelected = new FrmSale();
+                        formSelected = new FrmPaymentMethods(new PaymentMethod(catalog));
                         break;
                     }
 
