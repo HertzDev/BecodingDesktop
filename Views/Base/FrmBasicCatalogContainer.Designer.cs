@@ -51,7 +51,8 @@
             this.tableLayoutPanel1.Controls.Add(this.materialSingleLineTextField1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel1.RowCount = 6;
@@ -62,7 +63,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 227F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(797, 446);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTitulo
@@ -82,7 +83,7 @@
             // 
             this.lblNombre.Depth = 0;
             this.lblNombre.Hint = "Ingrese nombre";
-            this.lblNombre.Location = new System.Drawing.Point(13, 66);
+            this.lblNombre.Location = new System.Drawing.Point(13, 68);
             this.lblNombre.MaxLength = 32767;
             this.lblNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNombre.Name = "lblNombre";
@@ -101,7 +102,7 @@
             this.btnGuardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnGuardar.Depth = 0;
             this.btnGuardar.Icon = null;
-            this.btnGuardar.Location = new System.Drawing.Point(13, 97);
+            this.btnGuardar.Location = new System.Drawing.Point(13, 101);
             this.btnGuardar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Primary = true;
@@ -116,7 +117,7 @@
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Dock = System.Windows.Forms.DockStyle.Right;
             this.materialSingleLineTextField1.Hint = "Ingrese una palabra para buscar";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(379, 141);
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(382, 145);
             this.materialSingleLineTextField1.MaxLength = 32767;
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
@@ -134,7 +135,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.comboBox1, 2);
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(379, 177);
+            this.comboBox1.Location = new System.Drawing.Point(382, 181);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(405, 21);
             this.comboBox1.TabIndex = 6;
@@ -143,9 +144,10 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
-            this.dataGridView1.Location = new System.Drawing.Point(13, 211);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 215);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(771, 222);
+            this.dataGridView1.Size = new System.Drawing.Size(774, 222);
             this.dataGridView1.TabIndex = 7;
             // 
             // FrmBasicCatalogContainer
@@ -153,8 +155,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmBasicCatalogContainer";
+            this.ShowIcon = false;
             this.Text = "FrmBasicCatalogContainer";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

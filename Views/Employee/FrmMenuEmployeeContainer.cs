@@ -77,5 +77,10 @@ namespace BecodingDesktop.Views.Employee
                 mainMenu.Items[i].BackColorChanged += SetUnCheckedOption;
             }
         }
+
+        public void SetUnCheckedSubOption(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

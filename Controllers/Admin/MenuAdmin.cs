@@ -74,7 +74,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelected = Properties.Resources.I_payment_black,
                     UnSelectedColor = ColorManager.Black,
                     SelectedState = false,
-                    ClickEvent = MenuClickEvent,
+                    ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
                     FormAssigned = new FrmTypeInvoice()
                 },
@@ -86,7 +86,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedColor = ColorManager.PrimaryLight,
                     UnSelected = Properties.Resources.I_role_black,
                     UnSelectedColor = ColorManager.Black,
-                    ClickEvent = MenuClickEvent,
+                    ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
                     //FormAssigned = new FrmRoles()
                 },
@@ -98,7 +98,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedColor = ColorManager.PrimaryLight,
                     UnSelected = Properties.Resources.I_bill_black,
                     UnSelectedColor = ColorManager.Black,
-                    ClickEvent = MenuClickEvent,
+                    ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
                     FormAssigned = new FrmTypeInvoice()
                 },
@@ -110,7 +110,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedColor = ColorManager.PrimaryLight,
                     UnSelected = Properties.Resources.I_category_black,
                     UnSelectedColor = ColorManager.Black,
-                    ClickEvent = MenuClickEvent,
+                    ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
                     FormAssigned = new FrmCategories()
                 },
@@ -122,7 +122,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedColor = ColorManager.PrimaryLight,
                     UnSelected = Properties.Resources.I_brand_black,
                     UnSelectedColor = ColorManager.Black,
-                    ClickEvent = MenuClickEvent,
+                    ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
                     FormAssigned = new FrmBrands()
                 },
@@ -134,7 +134,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedColor = ColorManager.PrimaryLight,
                     UnSelected = Properties.Resources.I_model_black,
                     UnSelectedColor = ColorManager.Black,
-                    ClickEvent = MenuClickEvent,
+                    ClickEvent =SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
                     FormAssigned = new FrmModels()
                 }
@@ -148,7 +148,7 @@ namespace BecodingDesktop.Controllers.Admin
                 UnSelected = Properties.Resources.I_model_black,
                 UnSelectedColor = ColorManager.Black,
                 SubItems = catalogs,
-                ClickEvent = MenuClickEvent,
+                //ClickEvent = MenuClickEvent,
                 Banner = Properties.Resources.img_banner_sale,
             });
             List<MenuOptionModel> reports = new List<MenuOptionModel>
@@ -187,6 +187,7 @@ namespace BecodingDesktop.Controllers.Admin
         {
             var item = (ToolStripItem)sender;
             var tag = (int.Parse(item.Tag.ToString()));
+        
             var option =Options.Find(op=>op.Id==tag);
             option.SelectedState = !option.SelectedState;
             Options.ForEach(op =>
@@ -293,6 +294,7 @@ namespace BecodingDesktop.Controllers.Admin
                     TextAlign = ContentAlignment.MiddleLeft,
                     Size = Size
                 };
+                toolStripSubItem.Click += suboption.ClickEvent;
                 toolStripButtonArray.Add(toolStripSubItem);
             }
             toolStripDropDownItem.Items.AddRange(toolStripButtonArray.ToArray());
@@ -301,6 +303,42 @@ namespace BecodingDesktop.Controllers.Admin
         }
 
         public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SubMenuClickEvent(object sender, EventArgs e)
+        {
+            var item = (ToolStripItem)sender;
+            var tag = (int.Parse(item.Tag.ToString()));
+
+            MenuOptionModel option = null;
+            Options[4].SubItems.ForEach(s => { 
+                    if (tag == s.Id)
+                    {
+                        option = s;
+                    }
+                });
+            Options[3].SubItems.ForEach(s => {
+                if (tag == s.Id)
+                {
+                    option = s;
+                }
+            });
+            option.SelectedState = !option.SelectedState;
+            Options.ForEach(op =>
+            {
+                if (op.Id != option.Id)
+                {
+                    op.SelectedState = false;
+                }
+            });
+            item.ForeColor = (option.SelectedState) ? (option.Id <= 3) ? ColorManager.White : ColorManager.Black : ColorManager.Black;
+            item.Image = (option.SelectedState) ? option.Selected : option.UnSelected;
+            item.BackColor = (option.SelectedState) ? option.SelectedColor : ColorManager.White;
+        }
+
+        public void SetUnCheckedSubOption(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
