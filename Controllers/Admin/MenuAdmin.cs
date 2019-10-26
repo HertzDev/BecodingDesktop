@@ -81,18 +81,18 @@ namespace BecodingDesktop.Controllers.Admin
                     Banner = Properties.Resources.img_banner_sale,
                     FormAssigned = MenuOptionName.PAYMENTMETHODS
                 },
-                new MenuOptionModel()
-                {
-                    Id = 7,
-                    Name = "ROLES",
-                    Selected = Properties.Resources.I_role_white,
-                    SelectedColor = ColorManager.PrimaryLight,
-                    UnSelected = Properties.Resources.I_role_black,
-                    UnSelectedColor = ColorManager.Black,
-                    ClickEvent = SubMenuClickEvent,
-                    Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = MenuOptionName.ROLES
-                },
+                //new MenuOptionModel()
+                //{
+                //    Id = 7,
+                //    Name = "ROLES",
+                //    Selected = Properties.Resources.I_role_white,
+                //    SelectedColor = ColorManager.PrimaryLight,
+                //    UnSelected = Properties.Resources.I_role_black,
+                //    UnSelectedColor = ColorManager.Black,
+                //    ClickEvent = SubMenuClickEvent,
+                //    Banner = Properties.Resources.img_banner_sale,
+                //    FormAssigned = MenuOptionName.ROLES
+                //},
                 new MenuOptionModel()
                 {
                     Id = 8,
@@ -154,35 +154,35 @@ namespace BecodingDesktop.Controllers.Admin
                 //ClickEvent = MenuClickEvent,
                 Banner = Properties.Resources.img_banner_sale,
             });
-            List<MenuOptionModel> reports = new List<MenuOptionModel>
-            {
-                new MenuOptionModel()
-                {
-                    Id = 12,
-                    Name = "REPORTE DE VENTAS",
-                    Selected = Properties.Resources.I_report_white,
-                    SelectedColor = ColorManager.PrimaryLight,
-                    UnSelected = Properties.Resources.I_report_black,
-                    UnSelectedColor = ColorManager.Black,
-                    ClickEvent = MenuClickEvent,
-                    Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = MenuOptionName.SALES
+            //List<MenuOptionModel> reports = new List<MenuOptionModel>
+            //{
+            //    new MenuOptionModel()
+            //    {
+            //        Id = 12,
+            //        Name = "REPORTE DE VENTAS",
+            //        Selected = Properties.Resources.I_report_white,
+            //        SelectedColor = ColorManager.PrimaryLight,
+            //        UnSelected = Properties.Resources.I_report_black,
+            //        UnSelectedColor = ColorManager.Black,
+            //        ClickEvent = MenuClickEvent,
+            //        Banner = Properties.Resources.img_banner_sale,
+            //        FormAssigned = MenuOptionName.SALES
 
-                }
-            };
-            Options.Add(new MenuOptionModel()
-            {
-                Id = 5,
-                Name = "REPORTES",
-                Selected = Properties.Resources.I_model_white,
-                SelectedColor = ColorManager.PrimaryLight,
-                UnSelected = Properties.Resources.I_model_black,
-                UnSelectedColor = ColorManager.Black,
-                SubItems = reports,
-                ClickEvent = MenuClickEvent,
-                Banner = Properties.Resources.img_banner_sale,
-                FormAssigned = MenuOptionName.SALES
-            });
+            //    }
+            //};
+            //Options.Add(new MenuOptionModel()
+            //{
+            //    Id = 5,
+            //    Name = "REPORTES",
+            //    Selected = Properties.Resources.I_model_white,
+            //    SelectedColor = ColorManager.PrimaryLight,
+            //    UnSelected = Properties.Resources.I_model_black,
+            //    UnSelectedColor = ColorManager.Black,
+            //    SubItems = reports,
+            //    ClickEvent = MenuClickEvent,
+            //    Banner = Properties.Resources.img_banner_sale,
+            //    FormAssigned = MenuOptionName.SALES
+            //});
             return Options;
         }
 
@@ -316,12 +316,12 @@ namespace BecodingDesktop.Controllers.Admin
             var tag = (int.Parse(item.Tag.ToString()));
 
             MenuOptionModel option = null;
-            Options[4].SubItems.ForEach(s => { 
-                    if (tag == s.Id)
-                    {
-                        option = s;
-                    }
-                });
+            //Options[4].SubItems.ForEach(s => { 
+            //        if (tag == s.Id)
+            //        {
+            //            option = s;
+            //        }
+            //    });
             Options[3].SubItems.ForEach(s => {
                 if (tag == s.Id)
                 {
