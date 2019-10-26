@@ -9,6 +9,7 @@ namespace BecodingDesktop.Interfaces.Admin
     {
         List<MenuOptionModel> MenuOptionInit();
         void MenuClickEvent(object sender, EventArgs e);
+        void SubMenuClickEvent(object sender, EventArgs e);
         List<ToolStripItem> UnSelectedAll();
         ToolStripItem UnSelectedSubItems(MenuOptionModel option);
     }
