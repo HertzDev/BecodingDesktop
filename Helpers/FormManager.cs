@@ -72,12 +72,12 @@ namespace BecodingDesktop.Helpers
 
                 case MenuOptionName.USERS:
                     {
-                        formSelected = new FrmUsers();
+                        formSelected = new FrmUsers(new User(catalog));
                         break;
                     }
                 case MenuOptionName.USERSADD:
                     {
-                        formSelected = new FrmAddReplaceUser(new AddReplaceUser(new Role()),null);
+                        formSelected = new FrmAddReplaceUser(new AddReplaceUser(new Role()),null,new User(catalog));
                         break;
                     }
 
