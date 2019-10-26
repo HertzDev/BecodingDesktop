@@ -25,27 +25,30 @@ namespace BecodingDesktop.Controllers.Admin.Users
 
         public List<string> GetHeaders()
         {
-            return new List<string>() { "Código", "Nombre de Usuario", "Correo Electrónico", "Fecha de Creación", "Estado", "" };
+            return new List<string>() { "Código", "Nombre de Usuario", "Correo Electrónico","Rol", "Fecha de Creación", "Estado", "",""};
         }
 
         public Func<DataRow, UserModel> GetMapper()
         {
             Func<DataRow, UserModel> mapper = row =>
             {
-                var brand = new UserModel()
+                var user = new UserModel()
                 {
                     Id = Convert.ToInt32(row["Id"].ToString()),
                     Name = row["Nombre_Usuario"].ToString(),
                     Email = row["Email"].ToString(),
                     Role = new RoleModel() {
-                        Id = int.Parse(row["Roles_Id"].ToString())
+                        Id = int.Parse(row["Roles_Id"].ToString()),
+                        Name = row["Nombre_Rol"].ToString()
                     },
+                    Password=row["Password"].ToString(),
                     State = Convert.ToInt32(row["Eliminado"].ToString()),
                     CreationDate = DateTime.Parse(row["Creado"].ToString()).ToString("dd-MM-yyyy"),
                     UpdateDate = DateTime.Parse(row["Actualizado"].ToString()).ToString("dd-MM-yyyy")
                 };
-                brand.StateText = brand.State == 0 ? "Activo" : "Inactivo";
-                return brand;
+                user.StateText = user.State == 0 ? "Activo" : "Inactivo";
+                user.RoleText = user.Role.Name.ToString();
+                return user;
             };
             return mapper;
 

@@ -11,7 +11,7 @@ namespace BecodingDesktop.Models
     {
         public string Password { get; set; }
         public RoleModel Role { get; set; }
-
+        public string RoleText { get; set; }
         public string Email { get; set; }
         public string StateText { get; set; }
 
