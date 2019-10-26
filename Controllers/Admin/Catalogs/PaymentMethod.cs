@@ -16,11 +16,18 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
         {
             _catalog = catalog;
         }
+
+        public List<string> GetHeaders()
+        {
+            return new List<string>() { "Forma de pago", "Fecha de Creación", "Estado", "", "Código" };
+
+        }
+
         public Func<DataRow, PaymentMethodModel> GetMapper()
         {
             Func<DataRow, PaymentMethodModel> mapper = row =>
             {
-                return new PaymentMethodModel()
+                var method= new PaymentMethodModel()
                 {
                     Id = Convert.ToInt32(row["Id"].ToString()),
                     Name = row["Nombre_Pago"].ToString(),
@@ -28,6 +35,8 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
                     CreationDate = row["Creado"].ToString(),
                     UpdateDate = row["Actualizado"].ToString()
                 };
+                method.StateText = (method.State == 0) ? "Activo" : "Inactivo";
+                return method;
             };
             return mapper;
         }
