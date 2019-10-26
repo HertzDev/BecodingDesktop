@@ -43,12 +43,16 @@ namespace BecodingDesktop.Views.Employee
             {
                 formActive.Close();
             }
-            form.MdiParent = this;
-            form?.Show();
+            if (form != null)
+            {
+                form.MdiParent = this;
+                form.Dock = DockStyle.Fill;
+                form?.Show();
 
+            }
 
             UnSetBackColorChangeEvent();
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 3; i++)
             {
                 if (i != tag)
                 {
@@ -59,13 +63,13 @@ namespace BecodingDesktop.Views.Employee
                 }
 
             }
-            mainMenu.Items[6].Image = _options.First(op => op.Id == tag).Banner;
+            mainMenu.Items[3].Image = _options.First(op => op.Id == tag).Banner;
             SetBackColorChangeEvent();
         }
 
         public void UnSetBackColorChangeEvent()
         {
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 4; i++)
             {
                 mainMenu.Items[i].BackColorChanged -= SetUnCheckedOption;
             }
@@ -73,7 +77,7 @@ namespace BecodingDesktop.Views.Employee
 
         public void SetBackColorChangeEvent()
         {
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 4; i++)
             {
                 mainMenu.Items[i].BackColorChanged += SetUnCheckedOption;
             }
