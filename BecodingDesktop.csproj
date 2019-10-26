@@ -76,6 +76,7 @@
     <Compile Include="Controllers\General\Sales\DetailSale.cs" />
     <Compile Include="Helpers\BDConnection.cs" />
     <Compile Include="Helpers\ColorManager.cs" />
+    <Compile Include="Helpers\Enums\MenuOptionName.cs" />
     <Compile Include="Helpers\Enums\TypeValidation.cs" />
     <Compile Include="Helpers\FormManager.cs" />
     <Compile Include="Helpers\ImageManager.cs" />

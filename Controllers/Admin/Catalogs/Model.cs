@@ -25,14 +25,16 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
 
             Func<DataRow, Models.Catalogs.Model> mapper = row =>
             {
-                return new Models.Catalogs.Model()
+                var model = new Models.Catalogs.Model()
                 {
                     Id = Convert.ToInt32(row["Id"].ToString()),
                     Name = row["Nombre_Modelo"].ToString(),
                     State = Convert.ToInt32(row["Eliminado"].ToString()),
-                    CreationDate = row["Creado"].ToString(),
-                    UpdateDate = row["Actualizado"].ToString()
+                    CreationDate = DateTime.Parse(row["Creado"].ToString()).ToString("dd-MM-yyyy"),
+                    UpdateDate = DateTime.Parse(row["Actualizado"].ToString()).ToString("dd-MM-yyyy")
                 };
+                model.StateText = model.State == 0 ? "Activo" : "Inactivo";
+                return model;
             };
             return mapper;
         }

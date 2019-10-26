@@ -51,11 +51,12 @@ namespace BecodingDesktop.Views.Admin
         {
             var item = (ToolStripItem)sender;
             var tag = int.Parse(item.Tag.ToString());
-            var form = _options.First(op => op.Id==tag).FormAssigned;
+            var formtype = _options.First(op => op.Id==tag).FormAssigned;
+            var form = _menuOption.GetFormSelected(formtype);
             var formActive = this.ActiveMdiChild;
             if (formActive != null)
             {
-                formActive.Hide();
+                formActive.Close();
             }
             if(form!=null)
             {
@@ -107,14 +108,14 @@ namespace BecodingDesktop.Views.Admin
             {
                 if (tag == r.Id)
                 {
-                    form = r.FormAssigned;
+                    form = _menuOption.GetFormSelected(r.FormAssigned);
                 }
             });
             _options[4].SubItems.ForEach(r =>
             {
                 if (tag == r.Id)
                 {
-                    form = r.FormAssigned;
+                    form = _menuOption.GetFormSelected(r.FormAssigned);
                 }
             });
             var formActive = this.ActiveMdiChild;
