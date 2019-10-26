@@ -28,7 +28,7 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
 
             Func<DataRow, TypeInvoiceModel> mapper = row =>
             {
-                return new TypeInvoiceModel()
+                var invoice = new TypeInvoiceModel()
                 {
                     Id = Convert.ToInt32(row["Id"].ToString()),
                     Name = row["Tipo_Factura"].ToString(),
@@ -36,6 +36,8 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
                     CreationDate = row["Creado"].ToString(),
                     UpdateDate = row["Actualizado"].ToString()
                 };
+                invoice.StateText = invoice.State == 0 ? "Activo" : "Inactivo";
+                return invoice;
             };
             return mapper;
         }
@@ -56,6 +58,11 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
         {
             string[,] parameters = { { "@id", "1", invoice.Id.ToString() },{"@eliminado","1",invoice.State.ToString()} };
             return _catalog.SetItem(parameters, "pa_elminiar_tipo_factura");
+        }
+
+        public List<string> GetHeaders()
+        {
+            return new List<string>() { "Nombre de Marca", "Fecha de Creación", "Estado", "", "Código" };
         }
     }
 }

@@ -37,7 +37,7 @@ namespace BecodingDesktop.Views.Employee
             var item = (ToolStripItem)sender;
             var tag = int.Parse(item.Tag.ToString());
             var formType = _options.First(op => op.Id == tag).FormAssigned;
-            var form = _menuOption.GetFormSelected(formType);
+            var form = FormManager.GetFormSelected(formType);
             var formActive = this.ActiveMdiChild;
             if (formActive != null)
             {

@@ -1,4 +1,6 @@
 ﻿using BecodingDesktop.Interfaces.Admin;
+using BecodingDesktop.Interfaces.Admin.Catalogs;
+using BecodingDesktop.Models;
 using MaterialSkin.Controls;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +10,13 @@ namespace BecodingDesktop.Controllers.Admin.Users
 {
     class AddReplaceUser : IUser
     {
-        public List<Control> CreateView()
+        private readonly IRole _role;
+
+        public AddReplaceUser(IRole role)
+        {
+            _role = role;
+        }
+        public List<Control> CreateView(UserModel user)
         {
             List<Control> controls = new List<Control>();
             var font = new Font(SystemFonts.DefaultFont, FontStyle.Bold);
@@ -20,7 +28,8 @@ namespace BecodingDesktop.Controllers.Admin.Users
                 Hint = "Ingresa el nombre del Usuario",
                 Margin = margin,
                 Size = size,
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Fill,
+                Text = string.IsNullOrEmpty(user?.Name)?string.Empty:user?.Name
             };
             controls.Add(txtUserName);
 
@@ -30,7 +39,8 @@ namespace BecodingDesktop.Controllers.Admin.Users
                 Hint = "Ingresa el correo electronico del Usuario",
                 Margin = margin,
                 Size = size,
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Fill,
+                Text=string.IsNullOrEmpty(user?.Email) ? string.Empty : user?.Email
             };
             controls.Add(txtEmail);
 
@@ -41,7 +51,8 @@ namespace BecodingDesktop.Controllers.Admin.Users
                 Margin = margin,
                 Size = size,
                 Dock = DockStyle.Fill,
-                UseSystemPasswordChar=true
+                UseSystemPasswordChar=true,
+                Text = string.IsNullOrEmpty(user?.Password) ? string.Empty : user?.Password
             };
             controls.Add(txtPassword);
 
@@ -52,7 +63,8 @@ namespace BecodingDesktop.Controllers.Admin.Users
                 Margin = margin,
                 Size = size,
                 Dock = DockStyle.Fill,
-                UseSystemPasswordChar = true
+                UseSystemPasswordChar = true,
+                Text = string.IsNullOrEmpty(user?.Password) ? string.Empty : user?.Password
             };
             controls.Add(txtPasswordConfirm);
 
@@ -60,9 +72,15 @@ namespace BecodingDesktop.Controllers.Admin.Users
             {
                 Name = "cmbRoles",
                 Size = size,
-                Margin = margin
+                Margin = margin,
+                Text = string.IsNullOrEmpty(user?.Role.Name) ? string.Empty:user?.Role.Name
             };
-
+            var roles = _role.GetRoles();
+            List<string> list = new List<string>();
+            roles.ForEach(r=> {
+                list.Add(r.Name);
+            });
+            cmbRoles.Items.AddRange(list.ToArray());
             controls.Add(cmbRoles);
 
             return controls;

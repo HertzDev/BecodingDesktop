@@ -10,7 +10,6 @@ namespace BecodingDesktop.Interfaces.Employee
     {
         List<MenuOptionModel> MenuOptionInit();
         void MenuClickEvent(object sender, EventArgs e);
-        Form GetFormSelected(MenuOptionName option);
         List<ToolStripItem> UnSelectedAll();
     }
 }
