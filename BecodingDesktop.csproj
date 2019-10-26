@@ -66,13 +66,13 @@
     <Compile Include="Controllers\Admin\InvoiceBlock\AddReplaceInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\InvoiceBlock\DetailInvoiceBlock.cs" />
     <Compile Include="Controllers\Admin\MenuAdmin.cs" />
-    <Compile Include="Controllers\Admin\Product\Product.cs" />
     <Compile Include="Controllers\Admin\Users\AddReplaceUser.cs" />
     <Compile Include="Controllers\Admin\Users\DetailUser.cs" />
     <Compile Include="Controllers\Admin\Users\User.cs" />
     <Compile Include="Controllers\Employee\MenuEmployee.cs" />
     <Compile Include="Controllers\General\Products\AddReplaceProduct.cs" />
     <Compile Include="Controllers\General\Products\DetailProduct.cs" />
+    <Compile Include="Controllers\General\Products\Product.cs" />
     <Compile Include="Controllers\General\Sales\AddReplaceSale.cs" />
     <Compile Include="Controllers\General\Sales\DetailSale.cs" />
     <Compile Include="Controllers\General\Sales\Sale.cs" />

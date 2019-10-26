@@ -64,7 +64,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
                 Size = size,
                 Dock = DockStyle.Fill,
                 UseSystemPasswordChar = true,
-                Text = string.IsNullOrEmpty(user?.Password) ? string.Empty : user?.Password
+                Text = string.Empty
             };
             controls.Add(txtPasswordConfirm);
 
@@ -85,7 +85,6 @@ namespace BecodingDesktop.Controllers.Admin.Users
             var index = roles.FindIndex(r => r.Name.Equals((string.IsNullOrEmpty(user?.RoleText))?string.Empty:user?.RoleText));
             cmbRoles.SelectedIndex = index;
             controls.Add(cmbRoles);
-
             return controls;
         }
     }

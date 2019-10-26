@@ -19,6 +19,8 @@ namespace BecodingDesktop.Helpers.Enums
         TYPEINVOICES,
         INVOICEBLOCK,
         USERSADD,
-        USERSDETAIL
+        USERSDETAIL,
+        PRODUCTSADO,
+        PRODUCTSDETAIL,
     }
 }
