@@ -82,7 +82,7 @@ namespace BecodingDesktop.Controllers.Admin.Users
             });
 
             cmbRoles.Items.AddRange(list.ToArray());
-            var index = roles.FindIndex(r => r.Name.Equals(user.RoleText));
+            var index = roles.FindIndex(r => r.Name.Equals((string.IsNullOrEmpty(user?.RoleText))?string.Empty:user?.RoleText));
             cmbRoles.SelectedIndex = index;
             controls.Add(cmbRoles);
 
