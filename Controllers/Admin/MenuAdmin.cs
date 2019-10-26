@@ -366,7 +366,7 @@ namespace BecodingDesktop.Controllers.Admin
 
                 case MenuOptionName.CATEGORIES:
                     {
-                        formSelected = new FrmCategories();
+                        formSelected = new FrmCategories(new Category(catalog));
                         break;
                     }
 
