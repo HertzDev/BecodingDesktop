@@ -8,5 +8,7 @@ namespace BecodingDesktop.Models.Catalogs
 {
     public class Model:GenericCatalogModel
     {
+        public string StateText { get; set; }
+
     }
 }

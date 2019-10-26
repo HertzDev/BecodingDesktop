@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BecodingDesktop.Helpers.Enums;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace BecodingDesktop.Models
         public List<MenuOptionModel> SubItems { get; set; }
         public EventHandler ClickEvent { get; set; }
         public bool SelectedState { get; set; }
-        public Form FormAssigned { get; set; } 
+        public MenuOptionName FormAssigned { get; set; } 
         public Bitmap Banner { get; set; }
 
     }

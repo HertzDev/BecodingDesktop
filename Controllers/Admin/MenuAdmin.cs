@@ -1,5 +1,6 @@
 ﻿using BecodingDesktop.Controllers.Admin.Catalogs;
 using BecodingDesktop.Helpers;
+using BecodingDesktop.Helpers.Enums;
 using BecodingDesktop.Interfaces.Admin;
 using BecodingDesktop.Models;
 using BecodingDesktop.Views.Admin;
@@ -34,7 +35,7 @@ namespace BecodingDesktop.Controllers.Admin
                     ClickEvent = MenuClickEvent,
                     SelectedState = false,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = MenuOptionName.SALES
                 });
             Options.Add(
                 new MenuOptionModel()
@@ -48,7 +49,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmUsers()
+                    FormAssigned = MenuOptionName.USERS
 
                 });
             Options.Add(
@@ -63,9 +64,8 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmProduct()
+                    FormAssigned = MenuOptionName.PRODUCTS
                 });
-            var catalog = new CatalogBase();
             List<MenuOptionModel> catalogs = new List<MenuOptionModel>
             {
                 new MenuOptionModel()
@@ -79,7 +79,7 @@ namespace BecodingDesktop.Controllers.Admin
                     SelectedState = false,
                     ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmTypeInvoice()
+                    FormAssigned = MenuOptionName.PAYMENTMETHODS
                 },
                 new MenuOptionModel()
                 {
@@ -91,7 +91,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    //FormAssigned = new FrmRoles()
+                    FormAssigned = MenuOptionName.ROLES
                 },
                 new MenuOptionModel()
                 {
@@ -103,7 +103,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmTypeInvoice()
+                    FormAssigned = MenuOptionName.TYPEINVOICES
                 },
                 new MenuOptionModel()
                 {
@@ -115,7 +115,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmCategories()
+                    FormAssigned = MenuOptionName.CATEGORIES
                 },
                 new MenuOptionModel()
                 {
@@ -127,7 +127,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmBrands(new Brand(catalog))
+                    FormAssigned =MenuOptionName.BRANDS
                 },
                 new MenuOptionModel()
                 {
@@ -139,7 +139,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent =SubMenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmModels(new Model(catalog))
+                    FormAssigned = MenuOptionName.MODELS
                 }
             };
             Options.Add(new MenuOptionModel()
@@ -166,7 +166,7 @@ namespace BecodingDesktop.Controllers.Admin
                     UnSelectedColor = ColorManager.Black,
                     ClickEvent = MenuClickEvent,
                     Banner = Properties.Resources.img_banner_sale,
-                    FormAssigned = new FrmSale()
+                    FormAssigned = MenuOptionName.SALES
 
                 }
             };
@@ -181,7 +181,7 @@ namespace BecodingDesktop.Controllers.Admin
                 SubItems = reports,
                 ClickEvent = MenuClickEvent,
                 Banner = Properties.Resources.img_banner_sale,
-                FormAssigned = new FrmSale()
+                FormAssigned = MenuOptionName.SALES
             });
             return Options;
         }
@@ -344,6 +344,69 @@ namespace BecodingDesktop.Controllers.Admin
         public void SetUnCheckedSubOption(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        public Form GetFormSelected(MenuOptionName option)
+        {
+            Form formSelected = null;
+
+            var catalog = new CatalogBase();
+            switch (option)
+            {
+                case MenuOptionName.SALES:
+                    {
+                        formSelected = new FrmSale();
+                        break;
+                    }
+                case MenuOptionName.BRANDS:
+                    {
+                        formSelected = new FrmBrands(new Brand(catalog));
+                        break;
+                    }
+
+                case MenuOptionName.CATEGORIES:
+                    {
+                        formSelected = new FrmCategories();
+                        break;
+                    }
+
+                case MenuOptionName.INVOICEBLOCK:
+                    {
+                        formSelected = new FrmInvoiceBlock();
+                        break;
+                    }
+
+                case MenuOptionName.MODELS:
+                    {
+                        formSelected = new FrmModels(new Model(catalog));
+                        break;
+                    }
+
+                case MenuOptionName.PAYMENTMETHODS:
+                    {
+                        formSelected = new FrmSale();
+                        break;
+                    }
+
+                case MenuOptionName.PRODUCTS:
+                    {
+                        formSelected = new FrmProduct();
+                        break;
+                    }
+
+                case MenuOptionName.TYPEINVOICES:
+                    {
+                        formSelected = new FrmTypeInvoice();
+                        break;
+                    }
+
+                case MenuOptionName.USERS:
+                    {
+                        formSelected = new FrmUsers();
+                        break;
+                    }
+            }
+            return formSelected;
         }
     }
 }
