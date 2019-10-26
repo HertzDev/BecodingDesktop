@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace BecodingDesktop.Interfaces.Admin.Catalogs
 {
-    interface IModel
+    public interface IModel
     {
+        List<string> GetHeaders();
         List<Model> GetModels();
         MessageModel SetItem(Model model);
         MessageModel UpdateItem(Model model);
