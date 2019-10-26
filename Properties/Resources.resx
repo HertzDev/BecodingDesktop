@@ -121,11 +121,11 @@
   <data name="I_role_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_role_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="I_user_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_user_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="I_payment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_payment_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_category_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_category_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="I_user_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_user_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,26 +139,29 @@
   <data name="I_bill_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_bill_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_banner_sale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_banner_sale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="I_product_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_product_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="I_product_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_product_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="I_brand_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_brand_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_role_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_role_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_user_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_user_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_report_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_report_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_category_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_category_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="I_category_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_category_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="I_brand_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_brand_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_product_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_product_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="I_category_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_category_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="I_report_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_report_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="I_bill_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_bill_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,11 +169,11 @@
   <data name="I_report_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_report_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="I_role_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_role_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="I_model_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_model_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_product_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I_product_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="I_payment_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_payment_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,7 @@
   <data name="I_model_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I_model_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img_banner_sale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img_banner_sale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="I_edit_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_edit_gray2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
