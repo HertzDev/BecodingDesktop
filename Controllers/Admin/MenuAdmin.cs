@@ -345,7 +345,5 @@ namespace BecodingDesktop.Controllers.Admin
         {
             throw new NotImplementedException();
         }
-
-       
     }
 }

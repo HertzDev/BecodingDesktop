@@ -36,7 +36,7 @@ namespace BecodingDesktop.Helpers
 
                 case MenuOptionName.CATEGORIES:
                     {
-                        formSelected = new FrmCategories();
+                        formSelected = new FrmCategories(new Category(catalog));
                         break;
                     }
 
