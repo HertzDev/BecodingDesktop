@@ -54,7 +54,7 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
 
         public MessageModel UpdateItem(PaymentMethodModel method)
         {
-            string[,] parameters = { { "@Id", "1", method.Id.ToString() }, { "@nombre_rol", "2", method.Name } };
+            string[,] parameters = { { "@Id", "1", method.Id.ToString() }, { "@nombre", "2", method.Name } };
             return _catalog.SetItem(parameters, "pa_actualizar_forma_pago");
         }
 

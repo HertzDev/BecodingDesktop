@@ -57,7 +57,7 @@ namespace BecodingDesktop.Controllers.Admin.Catalogs
         public MessageModel UpdateStateItem(TypeInvoiceModel invoice)
         {
             string[,] parameters = { { "@id", "1", invoice.Id.ToString() },{"@eliminado","1",invoice.State.ToString()} };
-            return _catalog.SetItem(parameters, "pa_elminiar_tipo_factura");
+            return _catalog.SetItem(parameters, "pa_eliminar_tipo_factura");
         }
 
         public List<string> GetHeaders()

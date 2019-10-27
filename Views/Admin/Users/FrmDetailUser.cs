@@ -32,6 +32,7 @@ namespace BecodingDesktop.Views.Admin.Users
             this.flyContainer.Controls.AddRange(controls.ToArray());
             this.btnMainAction.Click += UpdateClick;
             this.btnCancel.Click += CancelEvent;
+            this.lblTitle.Text = "UPDATE";
         }
 
         private void UpdateClick(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace BecodingDesktop.Views.General
             this.lblTitleSignIn.ForeColor = ColorManager.Primary;
             base.OnLoad(e);
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-HU62KJ8; Initial Catalog=modulo_ventas;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SBB1RFT\SQLEXPRESS; Initial Catalog=modulo_ventas;Integrated Security=True");
         public void Login(string email, string contraseña)
         {
 
@@ -59,7 +59,7 @@ namespace BecodingDesktop.Views.General
 
                 if (dt.Rows.Count == 1)
                 {
-                    if (dt.Rows[0][1].ToString() == "Administrador")
+                    if (dt.Rows[0][1].ToString().ToLower() == "Administrador".ToLower())
                     {
                         if (dt.Rows[0][3].ToString() == "0")
                         {
@@ -77,7 +77,7 @@ namespace BecodingDesktop.Views.General
                         }
 
                     }
-                    else if (dt.Rows[0][1].ToString() == "Empleado")
+                    else if (dt.Rows[0][1].ToString().ToLower() == "Empleado".ToLower())
                     {
                         if (dt.Rows[0][3].ToString() == "0")
                         {

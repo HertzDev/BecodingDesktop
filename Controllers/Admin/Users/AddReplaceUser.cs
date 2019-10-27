@@ -22,6 +22,8 @@ namespace BecodingDesktop.Controllers.Admin.Users
             var font = new Font(SystemFonts.DefaultFont, FontStyle.Bold);
             var margin = new Padding(10, 20, 10, 0);
             var size = new Size(400, 30);
+
+
             MaterialSingleLineTextField txtUserName = new MaterialSingleLineTextField()
             {
                 Name = "txtUserName",

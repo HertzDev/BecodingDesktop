@@ -33,6 +33,8 @@ namespace BecodingDesktop.Views.General.Products
             this.btnMainAction.Text = (product != null) ? "GUARDAR" : "ACTUALIZAR";
             this.btnMainAction.Click += ClickEvent;
             this.btnCancel.Click += CloseEvent;
+
+            this.lblTitle.Text = (product != null) ? "GUARDAR" : "ACTUALIZAR";
         }
         public FrmAddReplaceProduct()
         {

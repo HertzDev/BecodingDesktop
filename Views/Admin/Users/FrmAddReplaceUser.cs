@@ -33,6 +33,7 @@ namespace BecodingDesktop.Views.Admin.Users
             this.btnMainAction.Text = userModel != null ? "ACTUALIZAR" : "GUARDAR";
             this.btnMainAction.Click += ClickEvent;
             this.btnCancel.Click += CloseEvent;
+            this.lblTitle.Text = userModel != null ? "ACTUALIZAR" : "GUARDAR";
         }
 
         private void CloseEvent(object sender, EventArgs e)
